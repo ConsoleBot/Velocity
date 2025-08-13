@@ -1,0 +1,23 @@
+{
+  "name": "velocity",
+  "version": "1.0.0",
+  "scripts": {
+    "extract-classes": "node extract-classes.mjs",
+    "build": "npm run extract-classes && postcss assets/css/input.css -o assets/css/style.css",
+    "watch": "npm run extract-classes && postcss assets/css/input.css -o assets/css/style.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.2.0",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^16.1.1",
+    "postcss-scss": "^4.0.9",
+    "sass": "^1.90.0",
+    "tailwindcss": "^4.1.11"
+  },
+  "dependencies": {
+    "mysql2": "^3.14.3"
+  }
+}

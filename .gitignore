@@ -1,0 +1,3 @@
+# Ignore theme node_modules
+node_modules/
+wp-content/themes/velocity/node_modules/
