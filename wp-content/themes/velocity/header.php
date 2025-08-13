@@ -16,7 +16,7 @@
             $logo = wp_get_attachment_image_src($header_logo_id, 'full'); 
     
             if ($logo[0]) { 
-                echo '<a href="' . esc_url(home_url('/')) . '" class="site-logo md:mb-[16px] md:me-[16px]">';
+                echo '<a href="' . esc_url(home_url('/')) . '" data-animate="animate-fade-down" class="site-logo md:mb-[16px] md:me-[16px]">';
                 echo '<img src="' . esc_url($logo[0]) . '" alt="' . get_bloginfo('name') . '">';
                 echo '</a>';
             } else {
@@ -29,9 +29,9 @@
                 'theme_location' => 'header-menu',
               ]);
             ?>
-            <a href="" class="text-[#FEFEFE] bg-[#191919] h-[46px] flex items-center px-[32px] rounded-[100px] no-underline font-semibold leading-[1] tracking-[0.25px]">Login</a>
+            <a href="" data-animate="animate-fade-right animate-once" class="text-[#FEFEFE] bg-[#191919] h-[46px] flex items-center px-[32px] rounded-[100px] no-underline font-semibold leading-[1] tracking-[0.25px]">Login</a>
           </div>
-          <button id="mobileMenuBtn" class="block md:hidden top-4 right-4 z-50 flex flex-col items-center justify-center space-y-[6px] w-10 h-10 focus:outline-none">
+          <button id="mobileMenuBtn" data-animate="animate-fade-right" class="block md:hidden top-4 right-4 z-50 flex flex-col items-center justify-center space-y-[6px] w-10 h-10 focus:outline-none">
             <span class="block h-[2px] w-6 bg-black transition-transform duration-300 ease-in-out"></span>
             <span class="block h-[2px] w-6 bg-black transition-transform duration-300 ease-in-out"></span>
           </button>

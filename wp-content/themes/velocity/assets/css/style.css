@@ -17,11 +17,21 @@
     --font-weight-bold: 700;
     --font-weight-extrabold: 800;
     --font-weight-black: 900;
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --animate-spin: spin var(--default-animation-duration, 1s) var(--default-animation-timing-function, linear) var(--default-animation-delay, 0s) infinite;
+    --animate-bounce: bounce var(--default-animation-duration, 1s) var(--default-animation-timing-function, ease) var(--default-animation-delay, 0s) infinite;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --animate-shake: shake var(--default-animation-duration, 0.5s) var(--default-animation-timing-function, ease) var(--default-animation-delay, 0s) both;
+    --animate-fade: fade var(--default-animation-duration, 1s) var(--default-animation-timing-function, ease) var(--default-animation-delay, 0s) both;
+    --animate-fade-down: fade-down var(--default-animation-duration, 1s) var(--default-animation-timing-function, ease) var(--default-animation-delay, 0s) both;
+    --animate-fade-up: fade-up var(--default-animation-duration, 1s) var(--default-animation-timing-function, ease) var(--default-animation-delay, 0s) both;
+    --animate-fade-left: fade-left var(--default-animation-duration, 1s) var(--default-animation-timing-function, ease) var(--default-animation-delay, 0s) both;
+    --animate-fade-right: fade-right var(--default-animation-duration, 1s) var(--default-animation-timing-function, ease) var(--default-animation-delay, 0s) both;
+    --animate-flip-down: flip-down var(--default-animation-duration, 1s) var(--default-animation-timing-function, ease) var(--default-animation-delay, 0s) both;
   }
 }
 @layer base {
@@ -195,6 +205,9 @@
   .relative {
     position: relative;
   }
+  .static {
+    position: static;
+  }
   .inset-0 {
     inset: calc(var(--spacing) * 0);
   }
@@ -294,9 +307,6 @@
   .mb-\[64px\] {
     margin-bottom: 64px;
   }
-  .mb-\[80px\] {
-    margin-bottom: 80px;
-  }
   .ml-auto {
     margin-left: auto;
   }
@@ -305,9 +315,6 @@
   }
   .flex {
     display: flex;
-  }
-  .grid {
-    display: grid;
   }
   .hidden {
     display: none;
@@ -384,9 +391,6 @@
   .max-w-\[300px\] {
     max-width: 300px;
   }
-  .max-w-\[340px\] {
-    max-width: 340px;
-  }
   .max-w-\[384px\] {
     max-width: 384px;
   }
@@ -404,9 +408,6 @@
   }
   .max-w-\[792px\] {
     max-width: 792px;
-  }
-  .min-w-0 {
-    min-width: calc(var(--spacing) * 0);
   }
   .min-w-\[200px\] {
     min-width: 200px;
@@ -434,11 +435,32 @@
   .rotate-45 {
     rotate: 45deg;
   }
+  .animate-fade {
+    animation: var(--animate-fade);
+  }
+  .animate-fade-down {
+    animation: var(--animate-fade-down);
+  }
+  .animate-fade-left {
+    animation: var(--animate-fade-left);
+  }
+  .animate-fade-right {
+    animation: var(--animate-fade-right);
+  }
+  .animate-fade-up {
+    animation: var(--animate-fade-up);
+  }
+  .animate-flip-down {
+    animation: var(--animate-flip-down);
+  }
+  .animate-shake {
+    animation: var(--animate-shake);
+  }
+  .animate-spin {
+    animation: var(--animate-spin);
+  }
   .resize {
     resize: both;
-  }
-  .grid-cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
   .grid-cols-\[repeat\(auto-fill\,minmax\(373px\,1fr\)\)\] {
     grid-template-columns: repeat(auto-fill,minmax(373px,1fr));
@@ -448,9 +470,6 @@
   }
   .flex-col {
     flex-direction: column;
-  }
-  .flex-row {
-    flex-direction: row;
   }
   .flex-wrap {
     flex-wrap: wrap;
@@ -484,9 +503,6 @@
   }
   .gap-\[48px\] {
     gap: 48px;
-  }
-  .gap-\[72px\] {
-    gap: 72px;
   }
   .space-y-6 {
     :where(& > :not(:last-child)) {
@@ -573,9 +589,6 @@
   .bg-cover {
     background-size: cover;
   }
-  .bg-size-\[105\%\] {
-    background-size: 105%;
-  }
   .bg-size-\[185\%\] {
     background-size: 185%;
   }
@@ -590,9 +603,6 @@
   }
   .bg-\[56\%_32\%\] {
     background-position: 56% 32%;
-  }
-  .bg-\[105\%\] {
-    background-position: 105%;
   }
   .bg-bottom {
     background-position: bottom;
@@ -631,12 +641,6 @@
   .px-\[56px\] {
     padding-inline: 56px;
   }
-  .px-\[120px\] {
-    padding-inline: 120px;
-  }
-  .py-0 {
-    padding-block: calc(var(--spacing) * 0);
-  }
   .py-\[4px\] {
     padding-block: 4px;
   }
@@ -658,9 +662,6 @@
   .pt-\[32px\] {
     padding-top: 32px;
   }
-  .pt-\[48px\] {
-    padding-top: 48px;
-  }
   .pt-\[64px\] {
     padding-top: 64px;
   }
@@ -669,9 +670,6 @@
   }
   .pb-\[112px\] {
     padding-bottom: 112px;
-  }
-  .pb-\[120px\] {
-    padding-bottom: 120px;
   }
   .pb-\[173px\] {
     padding-bottom: 173px;
@@ -806,6 +804,12 @@
   .no-underline {
     text-decoration-line: none;
   }
+  .opacity-0 {
+    opacity: 0%;
+  }
+  .opacity-100 {
+    opacity: 100%;
+  }
   .transition-transform {
     transition-property: transform, translate, scale, rotate;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -818,6 +822,45 @@
   .ease-in-out {
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
+  }
+  .animate-delay-\[0ms\] {
+    animation-delay: 0ms;
+  }
+  .animate-delay-\[100ms\] {
+    animation-delay: 100ms;
+  }
+  .animate-delay-\[200ms\] {
+    animation-delay: 200ms;
+  }
+  .animate-delay-\[300ms\] {
+    animation-delay: 300ms;
+  }
+  .animate-delay-\[400ms\] {
+    animation-delay: 400ms;
+  }
+  .animate-delay-\[600ms\] {
+    animation-delay: 600ms;
+  }
+  .animate-delay-\[1000ms\] {
+    animation-delay: 1000ms;
+  }
+  .animate-delay-\[5000ms\] {
+    animation-delay: 5000ms;
+  }
+  .animate-duration-1000 {
+    animation-duration: 1000ms;
+  }
+  .animate-duration-\[2000ms\] {
+    animation-duration: 2000ms;
+  }
+  .animate-duration-\[4000ms\] {
+    animation-duration: 4000ms;
+  }
+  .animate-fill-both {
+    animation-fill-mode: both;
+  }
+  .animate-once {
+    animation-iteration-count: 1;
   }
   .focus\:outline-none {
     &:focus {
@@ -848,11 +891,6 @@
   .sm\:w-auto {
     @media (width >= 40rem) {
       width: auto;
-    }
-  }
-  .sm\:flex-nowrap {
-    @media (width >= 40rem) {
-      flex-wrap: nowrap;
     }
   }
   .sm\:px-\[24px\] {
@@ -1019,11 +1057,6 @@
   .md\:flex-1 {
     @media (width >= 48rem) {
       flex: 1;
-    }
-  }
-  .md\:grid-cols-2 {
-    @media (width >= 48rem) {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
   .md\:flex-row {
@@ -1194,11 +1227,6 @@
   .lg\:pr-\[78px\] {
     @media (width >= 64rem) {
       padding-right: 78px;
-    }
-  }
-  .lg\:pb-\[151px\] {
-    @media (width >= 64rem) {
-      padding-bottom: 151px;
     }
   }
 }
@@ -1438,6 +1466,93 @@ body.no-scroll {
 @property --tw-ease {
   syntax: "*";
   inherits: false;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-1rem);
+  }
+  75% {
+    transform: translateX(1rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade-left {
+  0% {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fade-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes flip-down {
+  0% {
+    transform: rotateX(-90deg);
+    transform-origin: top;
+  }
+  100% {
+    transform: rotateX(0);
+    transform-origin: top;
+  }
 }
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {

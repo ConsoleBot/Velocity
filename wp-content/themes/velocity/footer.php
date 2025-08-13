@@ -10,21 +10,21 @@
                     $logo = wp_get_attachment_image_src($header_logo_id, 'full'); 
             
                     if ($logo[0]) {
-                        echo '<a href="' . esc_url(home_url('/')) . '" class="block mb-[24px]">';
+                        echo '<a href="' . esc_url(home_url('/')) . '" data-animate="animate-fade-up" class="block mb-[24px]">';
                         echo '<img src="' . esc_url($logo[0]) . '" alt="' . get_bloginfo('name') . '">';
                         echo '</a>';
                     } else {
                         echo '<h1 class="site-title"><a href="' . esc_url(home_url('/')) . '">' . get_bloginfo('name') . '</a></h1>';
                     }
                   ?>
-                  <div class="text-[16px] text-white leading-[24px] tracking-[0.4px]">
+                  <div data-animate="animate-fade-down animate-delay-[0ms]" class="text-[16px] text-white leading-[24px] tracking-[0.4px]">
                     Velocity Properties, a product of Bermwood Consulting LLC
                   </div>
-                  <div class="my-[24px] border-t-1 border-[#FEFEFE] w-[48px]"></div>
-                  <div class="text-[16px] text-white leading-[24px] tracking-[0.4px] mb-[8px]">
+                  <div data-animate="animate-fade-right animate-delay-[200ms]" class="my-[24px] border-t-1 border-[#FEFEFE] w-[48px]"></div>
+                  <div data-animate="animate-fade-down animate-delay-[400ms]" class="text-[16px] text-white leading-[24px] tracking-[0.4px] mb-[8px]">
                     3625 N. Janssen Avenue, Chicago, IL 60613
                   </div>
-                  <div class="text-[16px] text-white leading-[24px] tracking-[0.4px]">
+                  <div data-animate="animate-fade-down animate-delay-[600ms]" class="text-[16px] text-white leading-[24px] tracking-[0.4px]">
                     (312) 543-6986 | info@velocity.properties
                   </div>
                 </div>
@@ -54,8 +54,10 @@
 
                     if (!empty($products_submenus)) {
                         echo '<ul class="submenu-products text-white text-[16px] leading-[24px] tracking-[1px]">';
+                        $delay=0;
                         foreach ($products_submenus as $submenu) {
-                            echo '<li class="mb-[16px]"><a href="' . esc_url($submenu->url) . '">' . esc_html($submenu->title) . '</a></li>';
+                          echo '<li class="mb-[16px]"><a style="animation-delay: '.$delay.'ms" data-animate="animate-fade-down" href="' . esc_url($submenu->url) . '">' . esc_html($submenu->title) . '</a></li>';
+                          $delay += 200;
                         }
                         echo '</ul>';
                     }
@@ -67,7 +69,7 @@
                   </div>
                 </div>
               </div>
-              <p class="py-[30px] border-t-1 border-[#323232] text-center text-white text-[16px] leading-[26px] tracking-[0.4px] font-semibold">&copy; 2025 Velocity Properties. All rights reserved.</p>
+              <p data-animate="animate-fade-down animate-once" class="py-[30px] border-t-1 border-[#323232] text-center text-white text-[16px] leading-[26px] tracking-[0.4px] font-semibold">&copy; 2025 Velocity Properties. All rights reserved.</p>
             </div>
           </section>
         </footer>

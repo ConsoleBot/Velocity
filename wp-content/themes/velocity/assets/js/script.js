@@ -100,10 +100,35 @@ jQuery(document).ready(function($) {
     });
   }
 
+  setTimeout(()=> {
+    if (!counted && isInViewport($('.count').first())) {
+      counted = true;
+      animateCounts();
+    }
+  },0)
+
   $(window).on('scroll resize', function () {
     if (!counted && isInViewport($('.count').first())) {
       counted = true;
       animateCounts();
     }
+  });
+
+  const elements = $("[data-animate]");
+
+  elements.addClass("opacity-0");
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        $(entry.target)
+          .removeClass("opacity-0")
+          .addClass("opacity-100 " + $(entry.target).data("animate"));
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  elements.each(function () {
+    observer.observe(this);
   });
 });

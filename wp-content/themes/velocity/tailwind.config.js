@@ -10,7 +10,8 @@ module.exports = {
   ],
   safelist,
   theme: {
-    extend: {},
+    extend: {
+    }
   },
   plugins: [],
   experimental: {

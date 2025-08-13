@@ -47,8 +47,28 @@ function velocity_theme_setup() {
     'header-menu' => 'Header Menu Location',
     'mobile-menu' => 'Mobile Menu Location',
   ]);
+
+
 }
 add_action('after_setup_theme', 'velocity_theme_setup');
+
+function velocity_add_data_attribute($atts, $item, $args) {
+  if ($args->theme_location === 'header-menu' && $item->menu_item_parent == 0) {
+      static $delay = 0;
+      $atts['data-animate'] = 'animate-fade animate-once animate-duration-[2000ms]';
+      $atts['style'] = 'animation-delay:' . $delay . 'ms;';
+      $delay += 100;
+
+      if (isset($atts['class'])) {
+          $atts['class'] .= ' opacity-0';
+      } else {
+          $atts['class'] = 'opacity-0';
+      }
+  }
+  return $atts;
+}
+add_filter('nav_menu_link_attributes', 'velocity_add_data_attribute', 10, 3);
+
 
 if( function_exists('acf_add_options_page') ) {
   acf_add_options_page(array(
