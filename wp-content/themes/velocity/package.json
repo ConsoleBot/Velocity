@@ -18,7 +18,13 @@
     "tailwindcss": "^4.1.11"
   },
   "dependencies": {
+    "gsap": "^3.13.0",
     "mysql2": "^3.14.3",
     "tailwindcss-animated": "^2.0.0"
-  }
+  },
+  "main": "postcss.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

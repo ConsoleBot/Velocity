@@ -16,37 +16,72 @@ jQuery(document).ready(function($) {
 
   let hideTimeout;
   $('.menu-item-has-children > a').on('click', function (e) {
-      e.preventDefault();
-      const $submenu = $(this).siblings('ul');
+    e.preventDefault();
+    clearTimeout(hideTimeout);
 
-      $('.menu-item-has-children ul.submenu-open')
-          .not($submenu)
-          .stop(true, true)
-          .slideUp(200)
-          .removeClass('submenu-open');
+    const $submenu = $(this).siblings('ul.sub-menu');
+    const $all = $('.menu-item-has-children > ul.sub-menu');
 
-      $submenu.stop(true, true).slideToggle(200).toggleClass('submenu-open');
+    $all.not($submenu).each(function () {
+      const $el = $(this);
+      if ($el.is(':visible')) {
+        $el.stop(true, true)
+          .css('overflow', 'hidden')
+          .slideUp(200, function () {
+            $el.removeClass('submenu-open').css('overflow', '');
+          });
+      }
+    });
+
+    if ($submenu.is(':visible')) {
+      $submenu.stop(true, true)
+        .css('overflow', 'hidden')
+        .slideUp(200, function () {
+          $submenu.removeClass('submenu-open').css('overflow', '');
+        });
+    } else {
+      $submenu.addClass('submenu-open')
+      .css('overflow', 'hidden')
+      .hide()
+      .slideDown(200, function () {
+        $submenu.css('overflow', '');
+      });
+    }
   });
 
-  if (window.matchMedia("(hover: hover)").matches) {
-    $('.menu-item-has-children')
+  if (window.matchMedia('(hover: hover)').matches) {
+  $('.menu-item-has-children')
     .on('mouseleave', function () {
+      const $submenu = $(this).children('ul.sub-menu.submenu-open:visible');
+      if ($submenu.length) {
         hideTimeout = setTimeout(() => {
-            $(this).find('ul.submenu-open')
-                .stop(true, true)
-                .animate(
-                    { height: 'toggle', opacity: 'toggle' },
-                    200,
-                    function () {
-                        $(this).removeClass('submenu-open');
-                    }
-                );
+          $submenu.stop(true, true)
+            .css('overflow', 'hidden')
+            .slideUp(200, function () {
+              $submenu.removeClass('submenu-open').css('overflow', '');
+            });
         }, 500);
+      }
     })
     .on('mouseenter', function () {
-        clearTimeout(hideTimeout);
+      clearTimeout(hideTimeout);
     });
   }
+
+  $(document).on('click', function (e) {
+    // If the click target is NOT inside a menu-item-has-children
+    if (!$(e.target).closest('.menu-item-has-children').length) {
+      const $openSubmenus = $('.menu-item-has-children > ul.sub-menu.submenu-open:visible');
+      $openSubmenus.each(function () {
+        const $el = $(this);
+        $el.stop(true, true)
+          .css('overflow', 'hidden')
+          .slideUp(200, function () {
+            $el.removeClass('submenu-open').css('overflow', '');
+          });
+      });
+    }
+  });
 
   let scrollTop = $(window).scrollTop();
 
@@ -101,14 +136,16 @@ jQuery(document).ready(function($) {
   }
 
   setTimeout(()=> {
-    if (!counted && isInViewport($('.count').first())) {
+    const $firstCount = $('.count').first();
+    if ($firstCount.length && !counted && isInViewport($firstCount)) {
       counted = true;
       animateCounts();
     }
   },0)
 
   $(window).on('scroll resize', function () {
-    if (!counted && isInViewport($('.count').first())) {
+    const $firstCount = $('.count').first();
+    if ($firstCount.length && !counted && isInViewport($firstCount)) {
       counted = true;
       animateCounts();
     }

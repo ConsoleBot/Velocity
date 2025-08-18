@@ -9,26 +9,45 @@ function velocity_assets() {
     '6.5.1'
   );
 
-  // Enqueue CSS
   wp_enqueue_style(
     'velocity-style',
     get_template_directory_uri() . '/assets/css/style.css',
-    [], // Dependencies
-    $theme_version, // Versioning for cache-busting
-    'all' // Media
+    [],
+    $theme_version,
+    'all'
   );
   
-
-  // Enqueue jQuery (WordPress includes it already)
   wp_enqueue_script('jquery');
 
-  // Enqueue custom JS
+  wp_enqueue_script(
+    'gsap',
+    get_template_directory_uri() . '/assets/js/libs/gsap.min.js',
+    [],
+    '3.13.0',
+  );
+
+  wp_enqueue_script(
+    'gsap-scrolltrigger',
+    get_template_directory_uri() . '/assets/js/libs/ScrollTrigger.min.js',
+    ['gsap'],
+    '3.13.0',
+    true
+  );
+
   wp_enqueue_script(
     'velocity-script',
     get_template_directory_uri() . '/assets/js/script.js',
-    ['jquery'], // jQuery as a dependency
-    $theme_version, // Version
-    true // Load in footer
+    ['jquery'],
+    $theme_version,
+    true
+  );
+
+  wp_enqueue_script(
+    'velocity-animations',
+    get_template_directory_uri() . '/assets/js/animations.js',
+    ['gsap'],
+    $theme_version,
+    true
   );
 }
 add_action('wp_enqueue_scripts', 'velocity_assets');
