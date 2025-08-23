@@ -2,6 +2,10 @@ html, body {
   margin: 0;
   font-family: var(--font-manrope);
   
+  :focus-visible {
+    outline: unset!important;
+  }
+
   #page {
     .link-button::after {
       content: "\f078";

@@ -168,4 +168,111 @@ jQuery(document).ready(function($) {
   elements.each(function () {
     observer.observe(this);
   });
+  
+  $('.tabs').each(function () {
+    const $tabsWrapper = $(this);
+    const $tablist = $tabsWrapper.find('[role="tablist"]');
+    const $tabs = $tabsWrapper.find('[role="tab"]');
+    const $photo = $tabsWrapper.closest('.product-feature-container').find('.feature-photo');
+    const $featureName = $tabsWrapper.closest('.product-feature-container').find('.feature-name');
+    const $prevBtn = $tabsWrapper.find('.tab-prev');
+    const $nextBtn = $tabsWrapper.find('.tab-next');
+  
+    // Center the given tab within the visible viewport of the tablist
+    function scrollTabIntoCenter($container, $tab) {
+      const container = $container[0];
+      const tab = $tab[0];
+  
+      const contRect = container.getBoundingClientRect();
+      const tabRect  = tab.getBoundingClientRect();
+  
+      const tabCenterVisible = (tabRect.left - contRect.left) + (tabRect.width / 2);
+      const target = container.scrollLeft + tabCenterVisible - (container.clientWidth / 2);
+  
+      const maxScroll = container.scrollWidth - container.clientWidth;
+      const clamped = Math.max(0, Math.min(maxScroll, target));
+  
+      $container.animate({ scrollLeft: clamped });
+    }
+  
+    function setActiveTab($newTab, fromArrow = false) {
+      $tabs.each(function () {
+        const $tab = $(this);
+        const isActive = $tab.is($newTab);
+        $tab.attr('aria-selected', isActive);
+        $tab.attr('tabindex', isActive ? 0 : -1);
+        if (isActive) $tab.attr('data-active', true);
+        else $tab.removeAttr('data-active');
+  
+        $('#' + $tab.attr('aria-controls')).toggleClass('hidden', !isActive);
+      });
+  
+      const newPhoto = $newTab.data('photo');
+      const newName = $newTab.data('name');
+      if (newPhoto) $photo.attr('src', newPhoto);
+      if (newName) $featureName.html(newName);
+  
+      // Arrow visibility
+      const index = $tabs.index($newTab);
+      const isFirst = index === 0;
+      const isLast  = index === $tabs.length - 1;
+      $prevBtn.toggleClass('hidden', isFirst);
+      $nextBtn.toggleClass('hidden', isLast);
+  
+      // Keep your margins for arrow gutters (outside the scroll area)
+      $tablist.css({
+        'margin-left': isFirst ? '' : '40px',
+        'margin-right': isLast ? '' : '40px'
+      });
+  
+   
+      scrollTabIntoCenter($tablist, $newTab);
+  
+      $newTab.focus();
+    }
+  
+    // Initialize
+    const $current = $tabs.filter('[aria-selected="true"]').first().length
+      ? $tabs.filter('[aria-selected="true"]').first()
+      : $tabs.first();
+    setActiveTab($current);
+  
+    // Tab click
+    $tabs.on('click', function () {
+      setActiveTab($(this));
+    });
+  
+    // Keyboard nav
+    $tablist.on('keydown', function (e) {
+      const $active = $tabs.filter('[aria-selected="true"]');
+      let index = $tabs.index($active);
+  
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        setActiveTab($tabs.eq((index + 1) % $tabs.length));
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        setActiveTab($tabs.eq((index - 1 + $tabs.length) % $tabs.length));
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        setActiveTab($tabs.first());
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        setActiveTab($tabs.last());
+      }
+    });
+  
+    // Arrow buttons
+    $nextBtn.on('click', function () {
+      const $active = $tabs.filter('[aria-selected="true"]');
+      let index = $tabs.index($active);
+      setActiveTab($tabs.eq(index + 1), true);
+    });
+  
+    $prevBtn.on('click', function () {
+      const $active = $tabs.filter('[aria-selected="true"]');
+      let index = $tabs.index($active);
+      setActiveTab($tabs.eq(index - 1), true);
+    });
+  });  
 });

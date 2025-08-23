@@ -21,6 +21,11 @@ jQuery(document).ready(function($) {
 
   var vertical = getY();
 
+  const heroScreen = document.querySelector(".hero-screen-photo");
+  const heroTitle = document.querySelector(".hero-title");
+  const heroTagline1 = document.querySelector(".hero-tagline-1");
+  const heroTagline2 = document.querySelector(".hero-tagline-2");
+
   let tl = gsap.timeline({
     scrollTrigger: {
       trigger: '.section-hero',
@@ -30,17 +35,34 @@ jQuery(document).ready(function($) {
       pin: true,
       pinSpacing: false, 
       anticipatePin: 1,
+      onUpdate: (self) => {
+        if(parseFloat(self.progress.toFixed(2)) > 0){
+          heroScreen.classList.remove("animate-fade");
+        }else {
+          heroScreen.classList.add("animate-fade");
+        }
+        
+        if(parseFloat(self.progress.toFixed(2)) > .25){
+          heroTitle.classList.add("animate-fade-up");
+          heroTagline1.classList.add("animate-fade-up");
+          heroTagline2.classList.add("animate-fade-up");
+        }else {
+          heroTitle.classList.remove("animate-fade-up");
+          heroTagline1.classList.remove("animate-fade-up");
+          heroTagline2.classList.remove("animate-fade-up");
+        }
+      },
     }
   });
 
   tl.fromTo('.hero-screen-photo', 
     { scale: 1 }, 
-    { scale: .9, opacity: 0, ease: 'none', duration: .0001 }
+    { scale: 0.9, opacity: 0, ease: "none", duration: 0.0001 }
   );
 
   tl.fromTo(
     '.hero-laptop-photo', 
-    { scale: 2.2, opacity: 0, xPercent: -50, yPercent: 55, left: '50%'},
+    { scale: 2.2, opacity: 0, xPercent: -50, yPercent: 55, left: '50%' },
     { scale: 2.2, opacity: 1, xPercent: -50, yPercent: 55, left: '50%', duration: 0 }
   )
   .to(

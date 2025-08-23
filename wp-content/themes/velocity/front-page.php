@@ -10,7 +10,7 @@
   ?>
   <section class="relative h-full md:h-[965px]">
     <?php
-      $page_id = 69;
+      $page_id = 11;
       $header_background = get_field('hero_background', $page_id);
 
       $header_background_overlay = get_field('hero_overlay', $page_id);
@@ -36,7 +36,7 @@
       <div class="md:flex items-center py-[64px] md:py-[80px] gap-[16px]">
         <div class="w-full md:w-[561px] h-[386.3px] sm:h-full md:h-[661px] md:flex-1">
           <?php
-            $page_id = 69;
+            $page_id = 11;
             $real_estate = get_field('real_estate_image', $page_id);
 
             if ($real_estate) {
@@ -55,7 +55,7 @@
   </section>
   <section class="relative">
     <?php 
-      $page_id = 69;
+      $page_id = 11;
 
       $product_background = get_field('home_product_background', $page_id);
 
@@ -119,7 +119,7 @@
             $counter_logo = get_field('counter_logo', $page_id);
 
             if ($counter_logo) {
-              echo '<div data-animate="animate-fade-up animate-once" class="absolute w-[320px] md:w-[719.9px] h-[396.64px] md:h-[784.23px] top-[unset] bottom-[-10%] md:top-[-300px] left-[unset] md:left-[-370px] lg:left-[-240px] bg-size-[215%] md:bg-size-[auto] bg-[56%_32%] bg-no-repeat" style="background-image: url(' . esc_url($counter_logo) . ')"></div>';
+              echo '<div data-animate="animate-fade-up animate-once" class="absolute w-[100%] md:w-[719.9px] h-[477px] md:h-[784.23px] top-[unset] bottom-[-24%] md:top-[-300px] left-[unset] md:left-[-370px] lg:left-[-240px] bg-size-[180%] md:bg-size-[auto] bg-[56%_32%] bg-no-repeat" style="background-image: url(' . esc_url($counter_logo) . ')"></div>';
             }
           ?>
           <div class="w-initial md:w-[432px] float-none md:float-right flex flex-col md:flex-row flex-no-wrap md:flex-wrap gap-x-[68px] gap-y-[24px] md:gap-y-[80px]">
@@ -147,7 +147,7 @@
   <section>
     <div class="flex flex-col items-center relative pt-0 md:pt-[48px] pb-[112px] md:pb-[120px]">
       <?php
-        $page_id = 69;
+        $page_id = 11;
 
         $home_team_background = get_field('home_team_background', $page_id);
 
@@ -160,7 +160,7 @@
       <p data-animate="animate-fade-down animation-delay-[400]" class="font-inter max-w-[660px] text-center mb-[32px] md:mb-[80px] text-[#4A5C60] text-[16px] leading-[157%] tracking-[0.15px]">Get to know the faces behind our accomplishments and explore the collective dedication that defines us.</p>
       <div class="px-[16px] md:px-[120px] flex flex-col md:grid grid-cols-[repeat(auto-fill,minmax(564px,1fr))] gap-[32px] md:gap-[24px] mb-[32px] md:mb-[80px] w-full">
         <?php
-          $page_id = 69;
+          $page_id = 11;
           $members = get_field('members', $page_id);
           if($members){
             $delay=0;
@@ -169,7 +169,7 @@
                 echo '<div class="flex flex-col text-center md:text-left md:flex-row flex-wrap items-center justify-center gap-[8px] md:gap-[24px]">';
                   // Fixed image
                   echo '<div style="animation-delay: '.$delay.'ms" data-animate="animate-fade-left animate-once" class="flex-shrink-0 w-[200px] h-[240px] rounded-[16px] bg-[linear-gradient(0deg,#CCD6E0,#CCD6E0),linear-gradient(0deg,rgba(254,254,254,0.2),rgba(254,254,254,0.2))]">';
-                    echo '<div class="rounded-[16px] h-full w-full bg-no-repeat bg-center bg-size-[105%]" style="background-image: url('.esc_url($member['avatar_2']).')"></div>';
+                    echo '<div class="rounded-[16px] h-full w-full bg-no-repeat bg-center bg-size-[105%]" style="background-image: url('.esc_url($member['avatar']).')"></div>';
                   echo '</div>';
 
                   // Flexible text that can drop below image
