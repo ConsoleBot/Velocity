@@ -220,10 +220,12 @@ jQuery(document).ready(function($) {
       $nextBtn.toggleClass('hidden', isLast);
   
       // Keep your margins for arrow gutters (outside the scroll area)
-      $tablist.css({
-        'margin-left': isFirst ? '' : '40px',
-        'margin-right': isLast ? '' : '40px'
-      });
+      if ($(window).width() < 1024) {
+        $tablist.css({
+          'margin-left': isFirst ? '' : '40px',
+          'margin-right': isLast ? '' : '40px'
+        });
+      }
   
    
       scrollTabIntoCenter($tablist, $newTab);

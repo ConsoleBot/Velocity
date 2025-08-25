@@ -161,6 +161,30 @@ html, body {
         }
       }
     }
+
+    header.black {
+      #menu-header-menu {
+        li {
+          a {
+            color: #FEFEFE;
+          }
+        }
+
+        li.menu-item-has-children::after {
+          color: #FEFEFE;
+        }
+
+        .sub-menu.submenu-open {
+          border: 1px solid #FEFEFE1A;
+          background-color: #141817;
+        }
+      }
+    }
+
+    header.scrolled.black {
+      background-color: #141817A3;
+      border: 1px solid #FEFEFE1A;
+    }
   
     .inquiry-form {
 

@@ -1,6 +1,14 @@
     
-        <footer class="mt-auto bg-[#191919]">
-          <section>
+        <footer class="mt-auto">
+          <section class="relative">
+            <?php
+              $page_id = 69;
+              $footer_background = get_field('footer_background', $page_id);
+      
+              if ($footer_background) {
+                echo '<div class="z-[-1] bg-cover absolute top-0 left-0 w-full h-full pointer-events-none" style="background-image: url(' . esc_url($footer_background) . ');"></div>';
+              } 
+            ?>
             <div class="container">
               <div class="py-[80px] flex justify-between gap-[48px] md:gap-[16px] flex-col md:flex-row">
                 <div class="max-w-[384px]">
