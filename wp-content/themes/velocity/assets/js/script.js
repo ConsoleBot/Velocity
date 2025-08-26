@@ -230,7 +230,7 @@ jQuery(document).ready(function($) {
    
       scrollTabIntoCenter($tablist, $newTab);
   
-      $newTab.focus();
+      $newTab[0].focus({ preventScroll: true });
     }
   
     // Initialize

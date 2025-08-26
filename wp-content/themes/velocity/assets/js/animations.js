@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
   gsap.registerPlugin(ScrollTrigger);
-  
+
   function getY() {
     let w = $(window).width();
   
@@ -41,7 +41,7 @@ jQuery(document).ready(function($) {
         }else {
           heroScreen.classList.add("animate-fade");
         }
-        
+
         if(parseFloat(self.progress.toFixed(2)) > .25){
           heroTitle.classList.add("animate-fade-up");
           heroTagline1.classList.add("animate-fade-up");

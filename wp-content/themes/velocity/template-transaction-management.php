@@ -12,7 +12,7 @@
     <div class="text-center h-[372px] sm:h-[525px] md:h-[634px] lg:h-[860px] xl:h-[892px] 2xl:h-[942px]">
       <button data-animate="animate-once animate-fill-both animate-duration-[1000ms]" class="hero-title mb-[8px] border-[#FEFEFE] border bg-[#FEFEFE1A] rounded-[100px] py-[4px] sm:py-[8px] px-[12px] sm:px-[32px] font-semibold text-[10px] sm:text-[12px] tracking-[2px] text-[#FEFEFE]">PRODUCT</button>
       <h2 data-animate="animate-once animate-fill-both animate-duration-[1000ms]" class="hero-tagline-1 text-[24px] sm:text-[36px] md:text-[48px] lg:text-[64px] font-extrabold tracking-[8px] bg-[linear-gradient(90deg,#00FF8F_0%,#00D5C7_50%,#00AAFF_100%)] bg-clip-text text-transparent">TRANSACTION</h2>
-      <h1 data-animate="animate-once animate-fill-both animate-duration-[1000ms]" class="hero-tagline-2 mt-[-15px] text-[64px] sm:text-[96px] md:text-[144px] lg:text-[168px] font-extrabold tracking-[0.2px] leading-[80px] sm:leading-[114px] md:leading-[148px] lg:leading-[182px] bg-[linear-gradient(90deg,#00FF8F_0%,#00D5C7_50%,#00AAFF_100%)] bg-clip-text text-transparent">MANAGEMENT  </h1>
+      <h1 data-animate="animate-once animate-fill-both animate-duration-[1000ms]" class="hero-tagline-2 mt-[-15px] text-[32px] sm:text-[48px] md:text-[72px] lg:text-[120px] xl:text-[168px] font-extrabold tracking-[0.2px] leading-[80px] sm:leading-[114px] md:leading-[148px] lg:leading-[182px] bg-[linear-gradient(90deg,#00FF8F_0%,#00D5C7_50%,#00AAFF_100%)] bg-clip-text text-transparent">MANAGEMENT  </h1>
       <div class="hero relative mt-[-145px] sm:mt-[-210px] md:mt-[-255px] lg:mt-[-345px]">
         <?php
           $page_id = 42;
@@ -66,12 +66,12 @@
     </div>
   </section>
   <section class="bg-[#141817]">
-    <div class="container px-0! lg:px-[16]!">
-      <div class="py-[160px]">
+    <div class="container px-0! lg:px-[16px]!">
+      <div class="py-[67px] md:py-[160px]">
         <h2 data-animate="animate-fade-down" class="text-[32px] lg:text-[56px] text-center text-[#FEFEFE]  tracking-[0.2px] font-extrabold mb-[16px]">Product Features</h2>
         <p data-animate="animate-fade-down" class="px-[16px] font-inter max-w-[996px] mx-auto text-center text-[16px] text-[#FEFEFE] leading-[157%] tracking-[0.15px] pb-[40px]">Our property database streamlines real estate with advanced search, market data, AI recommendations, secure document management, and investment insights—all in a user-friendly interface.</p>
         <div class="product-feature-container">
-          <div class="bg-[#252829] h-[420px] lg:h-auto lg:rounded-[16px] mt-[24px] lg:mt-[149px] w-full py-[32px] lg:py-[84px] px-[16px] lg:px-[107px] relative mb-[72px]">
+          <div class="bg-[#252829] min-h-[336px] h-[420px] lg:h-auto lg:rounded-[16px] mt-[24px] lg:mt-[149px] w-full py-[32px] lg:py-[84px] px-[16px] lg:px-[107px] relative mb-[72px]">
             <div data-animate="animate-fade-up animate-once animate-fill-both" class="feature-name text-[32px] text-center lg:text-left lg:text-[56px] text-[#FEFEFE] font-extrabold tracking-[0.2px] max-w-[384px] mx-auto lg:mx-[unset]">Advance Search Filters</div>
             <?php
               $page_id = 42;
