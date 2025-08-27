@@ -1,4 +1,22 @@
 jQuery(document).ready(function($) {
+  var path = window.location.pathname;
+  var page = path.split("/").filter(Boolean).pop();
+
+  switch (page) {
+    case 'property-database':
+      $('#page').css('background-color', '#f0fbf9');
+      break;
+    case 'project-management':
+      $('#page').css('background-color', '#ecf8f6');
+      break;
+    case 'lease-administration':
+      $('#page').css('background-color', '#ebe7f6');
+      break;
+    case 'workflow-automation':
+      $('#page').css('background-color', '#f9fefc');
+      break;
+  }
+
   $('#mobileMenuBtn').on('click', function() {
     $('#mobileMenu').fadeToggle(300);
 
