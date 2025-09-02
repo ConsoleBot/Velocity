@@ -295,4 +295,40 @@ jQuery(document).ready(function($) {
       setActiveTab($tabs.eq(index - 1), true);
     });
   });  
+
+  const playBtn = $('.play-btn');
+  playBtn.on('click', function () {
+    const wrapper = $(this).closest('.video-container');
+    const video = wrapper.find('video').get(0);
+
+    if (video.paused) {
+      video.play();
+      $(this).find('i')
+        .removeClass('fa-play')
+        .addClass('fa-pause');
+    } else {
+      video.pause();
+      $(this).find('i')
+        .removeClass('fa-pause')
+        .addClass('fa-play');
+    }
+  });
+
+  const soundBtn = $('.sound-btn');
+  soundBtn.on('click', function () {
+    const wrapper = $(this).closest('.video-container');
+    const video = wrapper.find('video').get(0);
+  
+    if (video.muted) {
+      video.muted = false;
+      $(this).find('i')
+        .removeClass('fa-volume-xmark')
+        .addClass('fa-volume-high');
+    } else {
+      video.muted = true;
+      $(this).find('i')
+        .removeClass('fa-volume-high')
+        .addClass('fa-volume-xmark');
+    }
+  });
 });

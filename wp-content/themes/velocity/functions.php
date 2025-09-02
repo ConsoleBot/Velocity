@@ -98,3 +98,10 @@ if( function_exists('acf_add_options_page') ) {
       'redirect'      => false
   ));
 }
+
+function allow_hls_mime_types( $mimes ) {
+  $mimes['m3u8'] = 'application/vnd.apple.mpegurl';
+  $mimes['ts']   = 'video/mp2t';
+  return $mimes;
+}
+add_filter( 'upload_mimes', 'allow_hls_mime_types' );
