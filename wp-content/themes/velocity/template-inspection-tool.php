@@ -11,8 +11,8 @@
   ?>
   <div class="relative h-full sm:h-[1243px] pt-[100px] sm:pt-[142px] md:pt-[133px] lg:pt-[176px] xl:pt-[176px] bg-center bg-cover bg-no-repeat" style="background-image: url('<?php echo esc_url($product_hero_background_overlay); ?>');">
     <div class="text-center">
-      <button data-animate="animate-once animate-fill-both animate-duration-[1000ms]" class="hero-title mb-[8px] border-[#00C4E3] border bg-[#00C4E31A] rounded-[100px] py-[4px] sm:py-[8px] px-[12px] sm:px-[32px] font-semibold text-[10px] sm:text-[12px] tracking-[2px] text-[#00C4E3]">PRODUCT</button>
-      <h1 data-animate="animate-once animate-fill-both animate-duration-[1000ms]" class="hero-tagline-2 mt-[-15px] text-[32px] sm:text-[64px] md:text-[96px] lg:text-[120px] xl:text-[132px] tracking-[0.2px] font-extrabold leading-[80px] sm:leading-[114px] md:leading-[148px] lg:leading-[182px] bg-[linear-gradient(90deg,#59C2FF_0%,#5496FF_50%,#546BFF_100%)] bg-clip-text text-transparent">INSPECTION TOOL</h1>      
+      <button data-animate="animate-fade-up animate-once animate-fill-both animate-duration-[1000ms]" class="mb-[8px] border-[#00C4E3] border bg-[#00C4E31A] rounded-[100px] py-[4px] sm:py-[8px] px-[12px] sm:px-[32px] font-semibold text-[10px] sm:text-[12px] tracking-[2px] text-[#00C4E3]">PRODUCT</button>
+      <h1 data-animate="animate-fade-up animate-once animate-fill-both animate-duration-[1000ms]" class="mt-[-15px] text-[32px] sm:text-[64px] md:text-[96px] lg:text-[120px] xl:text-[132px] tracking-[0.2px] font-extrabold leading-[80px] sm:leading-[114px] md:leading-[148px] lg:leading-[182px] bg-[linear-gradient(90deg,#59C2FF_0%,#5496FF_50%,#546BFF_100%)] bg-clip-text text-transparent">INSPECTION TOOL</h1>      
     </div>
     <?php
       $page_id = 48;
@@ -20,12 +20,12 @@
       $product_hero_photo = get_field('product_hero_photo', $page_id);
 
       if ($product_hero_photo) {
-        echo '<img src="'.esc_url($product_hero_photo).'" class="relative mt-[-85px] sm:mt-[unset] sm:absolute top-[17%] sm:top-[unset] sm:bottom-0 left-1/2 -translate-x-1/2 transform" alt="Laptop">';
+        echo '<img data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both" src="'.esc_url($product_hero_photo).'" class="relative mt-[-85px] sm:mt-[unset] sm:absolute top-[17%] sm:top-[unset] sm:bottom-0 left-1/2 -translate-x-1/2 transform" alt="Laptop">';
       }
     ?>
     <div class="hidden lg:flex p-[16px] absolute bottom-0 w-full  justify-between max-w-[1200px] left-1/2 -translate-x-1/2 top-[55%]">
-      <p class="font-inter max-w-[256px] text-[20px] text-[#4A5C60] leading-[157%] tracking-[0.15px]">Designed specifically for commercial real estate portfolios, this innovative mobile app transforms the way you conduct property  assessments.</p>
-      <p class="font-inter max-w-[256px] text-[20px] text-[#4A5C60] leading-[157%] tracking-[0.15px]">This app streamlines commercial property assessments with real-time data. It boosts accuracy and productivity with instant reports.</p>
+      <p data-animate="animate-fade-left animate-once animate-delay-100 animate-fill-both" class="font-inter max-w-[256px] text-[20px] text-[#4A5C60] leading-[157%] tracking-[0.15px]">Designed specifically for commercial real estate portfolios, this innovative mobile app transforms the way you conduct property  assessments.</p>
+      <p data-animate="animate-fade-right animate-once animate-delay-100 animate-fill-both" class="font-inter max-w-[256px] text-[20px] text-[#4A5C60] leading-[157%] tracking-[0.15px]">This app streamlines commercial property assessments with real-time data. It boosts accuracy and productivity with instant reports.</p>
     </div>
   </div>
   <section class="lg:hidden py-[32px]">
@@ -41,7 +41,7 @@
       $about_tool_background_photo = get_field('about_tool_background_photo', $page_id);
 
       if ($about_tool_background_photo) {
-        echo '<img src="'.esc_url($about_tool_background_photo).'" class="hidden md:block absolute bottom-0 left-[-14px]" alt="Laptop">';
+        echo '<img data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both" src="'.esc_url($about_tool_background_photo).'" class="hidden md:block absolute bottom-0 left-[-14px]" alt="Laptop">';
       }
     ?>
     <?php
@@ -50,23 +50,23 @@
       $about_tool_photo = get_field('about_tool_photo', $page_id);
 
       if ($about_tool_photo) {
-        echo '<img src="'.esc_url($about_tool_photo).'" class="hidden md:block absolute z-1 bottom-0 right-[-21px]" alt="Laptop">';
+        echo '<img data-animate="animate-fade-left animate-once animate-delay-100 animate-fill-both" src="'.esc_url($about_tool_photo).'" class="hidden md:block absolute z-1 bottom-0 right-[-21px]" alt="Laptop">';
       }
     ?>
     <div class="container pt-[64px]! md:pt-[160px]! md:pb-[289px]!">
       <div class="max-w-[689.52px] relative z-1">
-        <h4 class="text-[32px] md:text-[56px] text-[#191919] font-extrabold tracking-[0.2px] mb-[24px]">About The Tool</h4>
-        <p class="text-[16px] md:text-[20px] font-inter text-[#4A5C60] leading-[157%] tracking-[0.15px] mb-[16px]">The cutting-edge tool designed to make your inspections more efficient, insightful and interactive than ever before.</p>
-        <p class="text-[16px] md:text-[20px] font-inter text-[#4A5C60] leading-[157%] tracking-[0.15px] mb-[24px] md:mb-[40px]">With this tool’s intuitive mobile app, conducting thorough property  assessments has never been easier. Say goodbye to cumbersome paperwork  and hello to streamlined inspections.</p>
-        <h6 class="text-[20px] md:text-[24px] text-[#00C4E3] tracking-[0.2%] mb-[40px] font-medium">This revolutionary mobile app will change the way you conduct inspections:​</h6>
+        <h4 data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both" class="text-[32px] md:text-[56px] text-[#191919] font-extrabold tracking-[0.2px] mb-[24px]">About The Tool</h4>
+        <p data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both" class="text-[16px] md:text-[20px] font-inter text-[#4A5C60] leading-[157%] tracking-[0.15px] mb-[16px]">The cutting-edge tool designed to make your inspections more efficient, insightful and interactive than ever before.</p>
+        <p data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both" class="text-[16px] md:text-[20px] font-inter text-[#4A5C60] leading-[157%] tracking-[0.15px] mb-[24px] md:mb-[40px]">With this tool’s intuitive mobile app, conducting thorough property  assessments has never been easier. Say goodbye to cumbersome paperwork  and hello to streamlined inspections.</p>
+        <h6 data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both" class="text-[20px] md:text-[24px] text-[#00C4E3] tracking-[0.2%] mb-[40px] font-medium">This revolutionary mobile app will change the way you conduct inspections:​</h6>
         <ul class="text-[16px] text-[#474B4C] font-inter leading-[157%] tracking-[0.15px] pl-[16px] md:pl-[24px] max-w-[484px]">
-          <li class="pl-[35px] mb-[16px]"><i class="fa-solid fa-circle-check text-[18px] ml-[-35px] mr-[16px] text-[#00C4E3]"></i>Perform inspections on either iOS or Android devices for ultimate flexibility.</li>
-          <li class="pl-[35px] mb-[16px]"><i class="fa-solid fa-circle-check text-[18px] ml-[-35px] mr-[16px] text-[#00C4E3]"></i>Work in either online or offline mode.</li>
-          <li class="pl-[35px] mb-[16px]"><i class="fa-solid fa-circle-check text-[18px] ml-[-35px] mr-[16px] text-[#00C4E3]"></i>Add photos or markup floor plans.</li>
-          <li class="pl-[35px] mb-[16px]"><i class="fa-solid fa-circle-check text-[18px] ml-[-35px] mr-[16px] text-[#00C4E3]"></i>Generate work orders in your existing work order platform.</li>
-          <li class="pl-[35px] mb-[16px]"><i class="fa-solid fa-circle-check text-[18px] ml-[-35px] mr-[16px] text-[#00C4E3]"></i>Create multiple templates for any inspection type with our flexible template tool.</li>
-          <li class="pl-[35px] mb-[16px]"><i class="fa-solid fa-circle-check text-[18px] ml-[-35px] mr-[16px] text-[#00C4E3]"></i>Produce professional reports with a click of a button.</li>
-          <li class="pl-[35px] mb-[16px]"><i class="fa-solid fa-circle-check text-[18px] ml-[-35px] mr-[16px] text-[#00C4E3]"></i>Put away the sticky notes and clipboards!</li>
+          <li data-animate="animate-fade-right animate-once animate-delay-100 animate-fill-both" class="pl-[35px] mb-[16px]"><i class="fa-solid fa-circle-check text-[18px] ml-[-35px] mr-[16px] text-[#00C4E3]"></i>Perform inspections on either iOS or Android devices for ultimate flexibility.</li>
+          <li data-animate="animate-fade-right animate-once animate-delay-100 animate-fill-both" class="pl-[35px] mb-[16px]"><i class="fa-solid fa-circle-check text-[18px] ml-[-35px] mr-[16px] text-[#00C4E3]"></i>Work in either online or offline mode.</li>
+          <li data-animate="animate-fade-right animate-once animate-delay-100 animate-fill-both" class="pl-[35px] mb-[16px]"><i class="fa-solid fa-circle-check text-[18px] ml-[-35px] mr-[16px] text-[#00C4E3]"></i>Add photos or markup floor plans.</li>
+          <li data-animate="animate-fade-right animate-once animate-delay-100 animate-fill-both" class="pl-[35px] mb-[16px]"><i class="fa-solid fa-circle-check text-[18px] ml-[-35px] mr-[16px] text-[#00C4E3]"></i>Generate work orders in your existing work order platform.</li>
+          <li data-animate="animate-fade-right animate-once animate-delay-100 animate-fill-both" class="pl-[35px] mb-[16px]"><i class="fa-solid fa-circle-check text-[18px] ml-[-35px] mr-[16px] text-[#00C4E3]"></i>Create multiple templates for any inspection type with our flexible template tool.</li>
+          <li data-animate="animate-fade-right animate-once animate-delay-100 animate-fill-both" class="pl-[35px] mb-[16px]"><i class="fa-solid fa-circle-check text-[18px] ml-[-35px] mr-[16px] text-[#00C4E3]"></i>Produce professional reports with a click of a button.</li>
+          <li data-animate="animate-fade-right animate-once animate-delay-100 animate-fill-both" class="pl-[35px] mb-[16px]"><i class="fa-solid fa-circle-check text-[18px] ml-[-35px] mr-[16px] text-[#00C4E3]"></i>Put away the sticky notes and clipboards!</li>
         </ul>
       </div>
     </div>
@@ -78,7 +78,7 @@
       $about_tool_background_photo = get_field('about_tool_background_photo', $page_id);
 
       if ($about_tool_background_photo) {
-        echo '<img src="'.esc_url($about_tool_background_photo).'"class="h-[532.9px] object-cover object-left w-[731.47px] absolute bottom-0 left-[-11px]" alt="Laptop">';
+        echo '<img data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both" src="'.esc_url($about_tool_background_photo).'"class="h-[532.9px] object-cover object-left w-[731.47px] absolute bottom-0 left-[-11px]" alt="Laptop">';
       }
     ?>
     <?php
@@ -87,14 +87,14 @@
       $about_tool_photo = get_field('about_tool_photo', $page_id);
 
       if ($about_tool_photo) {
-        echo '<img src="'.esc_url($about_tool_photo).'" class="h-[576px] absolute z-1 bottom-0 right-[-147px]" alt="Laptop">';
+        echo '<img data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both" src="'.esc_url($about_tool_photo).'" class="h-[576px] absolute z-1 bottom-0 right-[-147px]" alt="Laptop">';
       }
     ?>
   </section>
   <section class="relative">
     <div class="bg-[#233134] h-full md:h-[576px] absolute top-0 w-full z-[-1]"></div>
     <div class="container px-0!">
-      <h4 class="mx-auto text-center text-[32px] md:text-[56px] text-[#FEFEFE] font-extrabold tracking-[0.2px] max-w-[984px] mb-[64px] md:mb-[40px] mt-[64px] md:mt-[89px]">See how to transform your Property Inspections</h4>
+      <h4 data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both" class="mx-auto text-center text-[32px] md:text-[56px] text-[#FEFEFE] font-extrabold tracking-[0.2px] max-w-[984px] mb-[64px] md:mb-[40px] mt-[64px] md:mt-[89px]">See how to transform your Property Inspections</h4>
       <?php
       $page_id = 48;
       $video_url = get_field('inspection_video', $page_id); 
@@ -108,7 +108,7 @@
 
           if ($ext === 'm3u8'): ?>
               <!-- HLS adaptive streaming -->
-              <div class="video-container rounded-0 md:rounded-[16px] relative">
+              <div data-animate="animate-fade animate-once animate-delay-100 animate-fill-both" class="video-container rounded-0 md:rounded-[16px] relative">
                 <video class="rounded-0 md:rounded-[16px]" width="100%"  height="100%" id="video-player" playsinline title="Velocity Properties Inspection Tool" description="watch our Inspection Tool video now and revolutionize the way you inspect properties.">
                     <source src="<?php echo esc_url($video_url); ?>" type="application/x-mpegURL">
                     <track kind="subtitles" srclang="en" label="English"  src="<?php echo esc_url($inspection_video_subtitle); ?>" default>
@@ -119,9 +119,9 @@
                     <span class="text-[#B8D6E0] text-[4px] md:text-[7px] uppercase ml-[2px] md:ml-[5px] tracking-[1px] md:tracking-[8px] text-center">inspection tool</span>
                   </div>
                   <div class="controls text-[#FFFFFF] text-[7px] md:text-[18px] leading-[22px] md:leading-[50px] flex gap-[7px] md:gap-[13px]">
-                    <a class="block sound-btn rounded-[25px] border-1 border-white w-[40px] md:w-[80px] h-[25px] md:h-[50px] text-center"><i class="fa-solid fa-volume-high"></i></a>
-                    <a class="block play-btn rounded-[25px] border-1 border-white  w-[40px] md:w-[80px] h-[25px] md:h-[50px] text-center"><i class="fa-solid fa-play"></i></a>
-                    <a class="block learn-more-btn rounded-[25px] border-1 border-white h-[25px] md:h-[50px] w-[85px] md:w-[185px] text-center" href="#">
+                    <a class="cursor-pointer block sound-btn rounded-[25px] border-1 border-white w-[40px] md:w-[80px] h-[25px] md:h-[50px] text-center"><i class="fa-solid fa-volume-high"></i></a>
+                    <a class="cursor-pointer block play-btn rounded-[25px] border-1 border-white  w-[40px] md:w-[80px] h-[25px] md:h-[50px] text-center"><i class="fa-solid fa-play"></i></a>
+                    <a class="cursor-pointer block learn-more-btn rounded-[25px] border-1 border-white h-[25px] md:h-[50px] w-[85px] md:w-[185px] text-center" href="#">
                     Learn more <i class="fa-solid fa-play ml-[10px]"></i>
                     </a>
                   </div>
@@ -155,25 +155,25 @@
   </section>
   <section>
     <div class="container py-[48px]! md:py-[80px]!">
-      <h4 class="text-[32px] md:text-[56px] text-[#191919] tracking-[0.2px] font-extrabold text-center mb-[32px] md:mb-[80px]">Inspection Tool Process</h4>
+      <h4 data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both" class="text-[32px] md:text-[56px] text-[#191919] tracking-[0.2px] font-extrabold text-center mb-[32px] md:mb-[80px]">Inspection Tool Process</h4>
       <div class="overflow-x-auto">
         <?php
           $page_id = 48;
           $inspection_process = get_field('inspection_process', $page_id); 
         ?>
-        <iframe class="h-[255px] md:h-[503.88px] w-full"  src="<?php echo esc_url($inspection_process); ?>" title="Iframe Example"></iframe>
+        <iframe data-animate="animate-fade animate-once animate-delay-100 animate-fill-both" class="h-[255px] md:h-[503.88px] w-full"  src="<?php echo esc_url($inspection_process); ?>" title="Iframe Example"></iframe>
       </div>
     </div>
   </section>
   <section class="bg-[#EDF2F7]">
     <div class="container py-[64px]! lg:pt-[80px]! lg:pb-[160px]!">
-      <h4 class="text-[32px] md:text-[56px] text-[#191919] tracking-[0.2px] font-extrabold mb-[108px] lg:mb-[34px] max-w-unset text-center lg:text-left lg:max-w-[607.57px]">Velocity is available on these Systems</h4>
+      <h4 data-animate="animate-fade-left animate-once animate-delay-100 animate-fill-both" class="text-[32px] md:text-[56px] text-[#191919] tracking-[0.2px] font-extrabold mb-[108px] lg:mb-[34px] max-w-unset text-center lg:text-left lg:max-w-[607.57px]">Velocity is available on these Systems</h4>
       <div class="bg-[#DCE5EF] mb-[32px] h-[289px] md:h-[500px] lg:h-full py-[105px] px-[77.95px] relative rounded-[16px] overflow-x-clip">
         <?php
           $page_id = 48;
           $available_system_photo = get_field('available_system_photo', $page_id);
           if ($available_system_photo) {
-            echo '<img class="rounded-b-[16px] max-w-[125%] sm:max-w-full absolute bottom-0 left-1/2 translate-x-[-50%] lg:left-[unset] lg:right-0 lg:translate-x-[79px]" src="'.esc_url($available_system_photo).'" alt="Laptop">';
+            echo '<img data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both" class="rounded-b-[16px] max-w-[125%] sm:max-w-full absolute bottom-0 left-1/2 translate-x-[-50%] lg:left-[unset] lg:right-0 lg:translate-x-[79px]" src="'.esc_url($available_system_photo).'" alt="Laptop">';
           }
         ?>
         <div class="hidden gap-[48px] flex-col lg:flex">
@@ -182,7 +182,7 @@
             $available_system = get_field('available_system', $page_id);
             if ($available_system) {
               foreach ($available_system as $index => $system) {
-               echo '<div class="flex gap-[32px]">
+               echo '<div class="flex gap-[32px]" data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both">
                       <div class="h-[64px] w-[64px] rounded-full bg-[#CAD8E7] flex items-center justify-center">
                        <img src="'.esc_url($system['icon']).'" class="" alt="Laptop">
                       </div>
@@ -217,13 +217,24 @@
       </div>
     </div>
   </section>
-  <section class="bg-[#FEFEFE]">
-    <div class="container pt-[160px]! pb-[118px]!">
-      <h4 class="text-center text-[32px] md:text-[56px] text-[#191919] tracking-[0.2px] font-extrabold mb-[80px]">
+  <section class="bg-[#FEFEFE] relative">
+    <?php
+    $page_id = 48;
+    $features_background_overlay   = get_field('features_background_overlay', $page_id);
+    $features_background_photo   = get_field('features_background_photo', $page_id);
+
+    if ($features_background_overlay) {
+      echo '<div class="left-0 right-0 bg-no-repeat bg-center pointer-events-none absolute bottom-0 h-[1322px]" style="background-image: url('.esc_url($features_background_overlay).')" alt="Laptop"></div>';
+    }
+    if ($features_background_photo) {
+      echo '<div class="left-0 right-0 bg-no-repeat bg-right lg:bg-center pointer-events-none absolute bottom-0 h-[1308px]" style="background-image: url('.esc_url($features_background_photo).')" alt="Laptop"></div>';
+    }
+    ?>
+    <div class="relative container pr-0! lg:pr-[16px]! pt-[64px]! md:pt-[160px]! pb-[205px]! md:pb-[118px]!">
+      <h4 data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both" class="text-center text-[32px] md:text-[56px] text-[#191919] tracking-[0.2px] font-extrabold mb-[32px] md:mb-[80px]">
         Choose Your Plan
       </h4>
-
-      <div class="flex flex-col md:flex-row items-center">
+      <div class="flex flex-col md:flex-row md:items-center gap-[12px] md:gap-0 pb-[80px]">
         <?php
         $page_id = 48;
         $plans   = get_field('plan', $page_id);
@@ -236,13 +247,13 @@
             $cardBg     = 'bg-[#F8FAFC]';
             $badgeBg    = 'bg-[#00C4E31A]';
             $border     = 'border-[#CCD6E0]';
-            $rounded    = $index === 0 ? 'rounded-tl-[16px] rounded-bl-[16px]' : ''; // first card rounded-left
+            $rounded    = $index === 0 ? 'rounded-[16px] md:rounded-tr-[0] md:rounded-br-[0]' : ''; // first card rounded-left
             $titleColor = 'text-[#191919]';
             $badgeColor = 'text-[#00C4E3]';
             $desc       = '<p class="mb-[32px] text-[16px] text-[#4A5C60] leading-[157%] tracking-[0.15px]">
                             <span class="font-bold mr-[2px]">$10</span>on the next month
                           </p>';
-            $button     = "<button class='w-full bg-[#191919] py-[12px] rounded-[100px] mb-[40px] text-[#FEFEFE] font-bold text-[16px] tracking-[0.25px]'>
+            $button     = "<button class='cursor-pointer w-full bg-[#191919] py-[12px] rounded-[100px] mb-[40px] text-[#FEFEFE] font-bold text-[16px] tracking-[0.25px]'>
                             Subscribe now
                           </button>";
             $label      = '<span class="text-[#4A5C60] text-[16px] font-normal">/30 days</span>';
@@ -257,7 +268,7 @@
               $desc       = "<p class='mb-[32px] text-[16px] text-[#FEFEFE] leading-[157%] tracking-[0.15px]'>
                               Paid annually—let's discuss better pricing options
                             </p>";
-              $button     = "<button class='w-full bg-[#FEFEFE] py-[12px] rounded-[100px] mb-[40px] text-[#191919] font-bold text-[16px] tracking-[0.25px]'>
+              $button     = "<button class='cursor-pointer w-full bg-[#FEFEFE] py-[12px] rounded-[100px] mb-[40px] text-[#191919] font-bold text-[16px] tracking-[0.25px]'>
                               Get a quote
                             </button>";
               $label      = ''; // no label for enterprise
@@ -276,8 +287,8 @@
             }
 
             // === Card Output ===
-            echo '<div class="flex-1 p-[32px] '.$cardBg.' border '.$border.' '.$rounded.'">
-                    <span class="inline-block py-[8px] px-[24px] text-[12px] tracking-[2px] '.$badgeBg.' '.$badgeColor.' rounded-[100px] mb-[8px]">
+            echo '<div data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both" class="flex-1 p-[32px] '.$cardBg.' border '.$border.' '.$rounded.'">
+                    <span class="font-semibold inline-block py-[8px] px-[24px] text-[12px] tracking-[2px] '.$badgeBg.' '.$badgeColor.' rounded-[100px] mb-[8px]">
                       '.esc_html($plan['name']).'
                     </span>
 
@@ -295,6 +306,60 @@
           }
         }
         ?>
+      </div>
+      <div data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both" class="overflow-x-auto w-full">
+        <div class="flex px-[24px]">
+          <div class="py-[22px] px-[24px] min-w-[430px] w-[46%] text-[24px] text-[#191919] font-extrabold">Features</div>
+          <div class="py-[22px] px-[24px] min-w-[255px] w-[27%] text-[24px] text-[#191919] font-extrabold">Subscription</div>
+          <div class="py-[22px] px-[24px] min-w-[255px] w-[27%] text-[24px] text-[#191919] font-extrabold">Enterprise</div>
+        </div>
+        <div class="w-fit lg:w-full p-[24px] bg-[#FEFEFE] border border-[#CCD6E0] rounded-[16px]">
+        <?php
+          $features = get_field('features', $page_id);
+          if ($features) {
+            foreach ($features as $index => $feature) {
+              $feature_name = strtolower(trim(preg_replace('/\p{C}+/u', '', $feature['feature'])));
+              $bg = '';
+              $border = '';
+              if($index % 2 == 0){
+                $bg = 'bg-[#F8FAFC]';
+              }
+              if(count($features) != ($index + 1)){
+                $border = 'border-b-1 border-b-[#CCD6E0]';
+              }
+              echo '<div class="flex">';
+              echo '<div class="font-inter min-w-[430px] text-[#191919] font-medium py-[14px] pl-[24px] w-[46%] '.$border.' '.$bg.'">'. esc_html($feature['feature']) . '</div>';    
+
+              // Subscription column
+              echo '<div class="min-w-[255px] px-[16px] py-[14px] w-[27%] '.$border.' '.$bg.'">';
+              if ($feature_name === 'support') {
+                if (in_array('subscription', $feature['plans'])) {
+                  echo 'Email support';
+                }
+              } else {
+                if (in_array('subscription', $feature['plans'])) {
+                  echo '<i class="fa-solid fa-circle-check text-[#00C4E3] text-[18px]"></i>';
+                }
+              }
+              echo '</div>';
+
+              // Enterprise column
+              echo '<div class="min-w-[255px] px-[16px] py-[14px] pr-[24px] w-[27%] '.$border.' '.$bg.'">';
+              if ($feature_name === 'support') {
+                if (in_array('enterprise', $feature['plans'])) {
+                  echo 'Phone support';
+                }
+              } else {
+                if (in_array('enterprise', $feature['plans'])) {
+                  echo '<i class="fa-solid fa-circle-check text-[#00C4E3] text-[18px]"></i>';
+                }
+              }
+              echo '</div>';
+              echo '</div>';
+            }
+          }
+          ?>
+        </div>
       </div>
     </div>
   </section>
