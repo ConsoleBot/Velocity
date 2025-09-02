@@ -73,7 +73,7 @@
                 </div>
                 <div>
                   <div class="inquiry-form max-w-[404px]">
-                    <?php echo do_shortcode('[contact-form-7 id="dd1ca4f" title="Inquiry Form"]'); ?>
+                    <?php echo do_shortcode('[contact-form-7 id="dd1ca4f" title="Inquiry"]'); ?>
                   </div>
                 </div>
               </div>

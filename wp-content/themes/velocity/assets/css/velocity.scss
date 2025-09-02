@@ -7,6 +7,95 @@ html, body {
   }
 
   #page {
+    .contact-form {
+      .wpcf7-spinner {
+        display: none;
+      }
+      form.submitting .wpcf7-spinner {
+        height: 24px;
+      }
+
+      .name {
+        p{
+          margin-bottom: 16px;
+        }
+        p {
+          display: flex;
+          gap: 16px;
+
+          input {
+            height: 52px;
+            background-color: #FEFEFE;
+            border-radius: 8px;
+            padding: 16px;
+            color: #4A5C60;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.15px;
+            width: 100%;
+            border: 1px solid #CCD6E0;
+          }
+
+          input::placeholder {
+            color: #4A5C60;
+          }
+        }
+      }
+
+      p:not(:last-child) {
+       margin-bottom: 16px;
+      }
+
+      p {
+        input {
+          height: 52px;
+          background-color: #FEFEFE;
+          border-radius: 8px;
+          padding: 16px;
+          color: #4A5C60;
+          font-size: 14px;
+          line-height: 20px;
+          letter-spacing: 0.15px;
+          width: 100%;
+          border: 1px solid #CCD6E0;
+        }
+
+        input::placeholder {
+          color: #4A5C60;
+        }
+
+        textarea {
+          height: 108px;
+          background-color: #FEFEFE;
+          border-radius: 8px;
+          padding: 16px;
+          color: #4A5C60;
+          font-size: 14px;
+          line-height: 20px;
+          letter-spacing: 0.15px;
+          width: 100%;
+          border: 1px solid #CCD6E0;
+        }
+      }
+
+      .wpcf7-submit {
+        height: 56px;
+        background-color: #00C4E3;
+        width: 100%;
+        border-radius: 8px;
+        color: #FFFFFF;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        letter-spacing: 0.46px;
+        cursor: pointer;
+      }
+
+      .wpcf7-response-output {
+        margin: 0px;
+      }
+    }
+
     .link-button::after {
       content: "\f078";
       font-family: "Font Awesome 6 Free";

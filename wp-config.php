@@ -103,3 +103,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
+
+if (isset($_SERVER['HTTP_HOST'])) {
+	$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http";
+	define('WP_HOME', $protocol . '://' . $_SERVER['HTTP_HOST']);
+	define('WP_SITEURL', $protocol . '://' . $_SERVER['HTTP_HOST']);
+}
