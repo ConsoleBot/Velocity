@@ -10,7 +10,7 @@
               } 
             ?>
             <div class="container relative z-1">
-              <div class="py-[80px] flex justify-between gap-[48px] md:gap-[16px] flex-col md:flex-row">
+              <div class="py-[64px] pb-[56px] md:py-[80px] flex justify-between gap-[48px] md:gap-[16px] flex-col md:flex-row">
                 <div class="max-w-[384px]">
                   <?php
                     $page_id = 69;
@@ -77,7 +77,7 @@
                   </div>
                 </div>
               </div>
-              <p data-animate="animate-fade-down animate-once" class="py-[30px] border-t-1 border-[#323232] text-center text-white text-[16px] leading-[26px] tracking-[0.4px] font-semibold">&copy; 2025 Velocity Properties. All rights reserved.</p>
+              <p data-animate="animate-fade-down animate-once" class="py-[17px] md:py-[30px] border-t-1 border-[#323232] text-center text-white text-[16px] leading-[26px] tracking-[0.4px] font-semibold">&copy; 2025 Velocity Properties. All rights reserved.</p>
             </div>
           </section>
         </footer>

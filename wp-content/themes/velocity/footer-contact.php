@@ -65,7 +65,7 @@
                   ?>
                 </div>
               </div>
-              <p data-animate="animate-fade-down animate-once" class="py-[30px] border-t-1 border-[#323232] text-center text-white text-[16px] leading-[26px] tracking-[0.4px] font-semibold">&copy; 2025 Velocity Properties. All rights reserved.</p>
+              <p data-animate="animate-fade-down animate-once" class="py-[17px] md:py-[30px] border-t-1 border-[#323232] text-center text-white text-[16px] leading-[26px] tracking-[0.4px] font-semibold">&copy; 2025 Velocity Properties. All rights reserved.</p>
             </div>
           </section>
         </footer>
