@@ -40,7 +40,7 @@
             $real_estate = get_field('real_estate_image', $page_id);
 
             if ($real_estate) {
-              echo '<img data-animate="animate-fade-right" class="w-full h-full object-none" src='. esc_url($real_estate) .' alt="">';
+              echo '<img data-animate="animate-fade-right" class="pointer-events-none w-full h-full object-none" src='. esc_url($real_estate) .' alt="">';
             }
           ?>
         </div>
@@ -85,7 +85,7 @@
                 if (!empty($service['name'])) {
                   echo '<div style="animation-delay: '.$delay.'ms" data-animate="animate-flip-down animate-once" class="border border-[#CCD6E0] bg-[#FEFEFE] p-[16px] md:p-[32px] rounded-[16px] flex flex-col items-center">';
                   echo '<div class="mb-[24px] h-[104px] w-[104px] rounded-full" style="background-color:' . esc_attr($service['color']) . '">';
-                  echo '<div class="h-full w-full bg-center bg-no-repeat" style="background-image: url(' . esc_url($service['image']) . ')"></div>';
+                  echo '<div class="h-full w-full bg-center bg-no-repeat pointer-events-none" style="background-image: url(' . esc_url($service['image']) . ')"></div>';
                   echo '</div>';
                   echo '<h4 class="text-center mb-[8px] text-[24px] text-[#233134] font-extrabold leading-[1] tracking-[0.2px]">' . esc_html($service['name']) . '</h4>';
                   echo '<p class="font-inter text-center mb-[24px] text-[14px] text-[#4A5C60] leading-[22px] tracking-[0.15px]">' . esc_html($service['description']) . '</p>';
@@ -119,7 +119,7 @@
             $counter_logo = get_field('counter_logo', $page_id);
 
             if ($counter_logo) {
-              echo '<div data-animate="animate-fade-up animate-once" class="absolute w-[100%] md:w-[719.9px] h-[477px] md:h-[784.23px] top-[unset] bottom-[-24%] md:top-[-300px] left-[unset] md:left-[-370px] lg:left-[-240px] bg-size-[180%] md:bg-size-[auto] bg-[56%_32%] bg-no-repeat" style="background-image: url(' . esc_url($counter_logo) . ')"></div>';
+              echo '<div data-animate="animate-fade-up animate-once" class="pointer-events-none absolute w-[100%] md:w-[719.9px] h-[477px] md:h-[784.23px] top-[unset] bottom-[-24%] md:top-[-300px] left-[unset] md:left-[-370px] lg:left-[-240px] bg-size-[180%] md:bg-size-[auto] bg-[56%_32%] bg-no-repeat" style="background-image: url(' . esc_url($counter_logo) . ')"></div>';
             }
           ?>
           <div class="w-initial md:w-[432px] float-none md:float-right flex flex-col md:flex-row flex-no-wrap md:flex-wrap gap-x-[68px] gap-y-[24px] md:gap-y-[80px]">
@@ -152,7 +152,7 @@
         $home_team_background = get_field('home_team_background', $page_id);
 
         if ($home_team_background) {
-          echo '<div data-animate="animate-fade-up animate-once animate-duration-1000 animate-delay-[1000ms]" class="w-full h-full bg-center bg-cover z-[-1] absolute" style="background-image: url(' . esc_url($home_team_background) . ')"></div>';
+          echo '<div data-animate="animate-fade-up animate-once animate-duration-1000 animate-delay-[1000ms]" class="pointer-events-none w-full h-full bg-center bg-cover z-[-1] absolute" style="background-image: url(' . esc_url($home_team_background) . ')"></div>';
         }
       ?>  
       <button data-animate="animate-fade-down animation-delay-[0]" class="flex-1 mb-[24px] border-[#00C4E3] border bg-[#00C4E31A] rounded-[100px] py-[4px] sm:py-[8px] px-[12px] sm:px-[32px] font-semibold text-[10px] sm:text-[12px] leading-[1] tracking-[2px] text-[#00C4E3]">OUR TEAM</button>
@@ -169,7 +169,7 @@
                 echo '<div class="flex flex-col text-center md:text-left md:flex-row flex-wrap items-center justify-center gap-[8px] md:gap-[24px]">';
                   // Fixed image
                   echo '<div style="animation-delay: '.$delay.'ms" data-animate="animate-fade-left animate-once" class="flex-shrink-0 w-[200px] h-[240px] rounded-[16px] bg-[linear-gradient(0deg,#CCD6E0,#CCD6E0),linear-gradient(0deg,rgba(254,254,254,0.2),rgba(254,254,254,0.2))]">';
-                    echo '<div class="rounded-[16px] h-full w-full bg-no-repeat bg-center bg-size-[105%]" style="background-image: url('.esc_url($member['avatar']).')"></div>';
+                    echo '<div class="pointer-events-none rounded-[16px] h-full w-full bg-no-repeat bg-center bg-size-[105%]" style="background-image: url('.esc_url($member['avatar']).')"></div>';
                   echo '</div>';
 
                   // Flexible text that can drop below image
@@ -185,7 +185,7 @@
           }
         ?>  
       </div>
-      <a data-animate="animate-fade-up animate-once" href="http://localhost:8000/about-us" class="relative flex link-button w-auto bg-[#00C4E3] rounded-[100px] py-[12px] px-[32px] font-bold text-[14px] md:text-[16px] leading-[1] tracking-[.25px] text-white">View All Team</a>
+      <a data-animate="animate-fade-up animate-once" href="<?php echo esc_url( home_url( '/about-us' ) ); ?>" class="relative flex link-button w-auto bg-[#00C4E3] rounded-[100px] py-[12px] px-[32px] font-bold text-[14px] md:text-[16px] leading-[1] tracking-[.25px] text-white">View All Team</a>
     </div>
   </section>
 <?php get_footer(); ?>

@@ -20,7 +20,7 @@
       $product_hero_photo = get_field('product_hero_photo', $page_id);
 
       if ($product_hero_photo) {
-        echo '<img data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both" src="'.esc_url($product_hero_photo).'" class="relative mt-[-85px] sm:mt-[unset] sm:absolute top-[17%] sm:top-[unset] sm:bottom-0 left-1/2 -translate-x-1/2 transform" alt="Laptop">';
+        echo '<img data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both" src="'.esc_url($product_hero_photo).'" class="pointer-events-none relative mt-[-85px] sm:mt-[unset] sm:absolute top-[17%] sm:top-[unset] sm:bottom-0 left-1/2 -translate-x-1/2 transform" alt="Laptop">';
       }
     ?>
     <div class="hidden lg:flex p-[16px] absolute bottom-0 w-full  justify-between max-w-[1200px] left-1/2 -translate-x-1/2 top-[55%]">
@@ -41,7 +41,7 @@
       $about_tool_background_photo = get_field('about_tool_background_photo', $page_id);
 
       if ($about_tool_background_photo) {
-        echo '<img data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both" src="'.esc_url($about_tool_background_photo).'" class="hidden md:block absolute bottom-0 left-[-14px]" alt="Laptop">';
+        echo '<img data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both" src="'.esc_url($about_tool_background_photo).'" class="pointer-events-none hidden md:block absolute bottom-0 left-[-14px]" alt="Laptop">';
       }
     ?>
     <?php
@@ -50,7 +50,7 @@
       $about_tool_photo = get_field('about_tool_photo', $page_id);
 
       if ($about_tool_photo) {
-        echo '<img data-animate="animate-fade-left animate-once animate-delay-100 animate-fill-both" src="'.esc_url($about_tool_photo).'" class="hidden md:block absolute z-1 bottom-0 right-[-21px]" alt="Laptop">';
+        echo '<img data-animate="animate-fade-left animate-once animate-delay-100 animate-fill-both" src="'.esc_url($about_tool_photo).'" class="pointer-events-none hidden md:block absolute z-1 bottom-0 right-[-21px]" alt="Laptop">';
       }
     ?>
     <div class="container pt-[64px]! md:pt-[160px]! md:pb-[289px]!">
@@ -78,7 +78,7 @@
       $about_tool_background_photo = get_field('about_tool_background_photo', $page_id);
 
       if ($about_tool_background_photo) {
-        echo '<img data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both" src="'.esc_url($about_tool_background_photo).'"class="h-[532.9px] object-cover object-left w-[731.47px] absolute bottom-0 left-[-11px]" alt="Laptop">';
+        echo '<img data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both" src="'.esc_url($about_tool_background_photo).'"class="pointer-events-none h-[532.9px] object-cover object-left w-[731.47px] absolute bottom-0 left-[-11px]" alt="Laptop">';
       }
     ?>
     <?php
@@ -87,7 +87,7 @@
       $about_tool_photo = get_field('about_tool_photo', $page_id);
 
       if ($about_tool_photo) {
-        echo '<img data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both" src="'.esc_url($about_tool_photo).'" class="h-[576px] absolute z-1 bottom-0 right-[-147px]" alt="Laptop">';
+        echo '<img data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both" src="'.esc_url($about_tool_photo).'" class="pointer-events-none h-[576px] absolute z-1 bottom-0 right-[-147px]" alt="Laptop">';
       }
     ?>
   </section>
@@ -173,7 +173,7 @@
           $page_id = 48;
           $available_system_photo = get_field('available_system_photo', $page_id);
           if ($available_system_photo) {
-            echo '<img data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both" class="rounded-b-[16px] max-w-[125%] sm:max-w-full absolute bottom-0 left-1/2 translate-x-[-50%] lg:left-[unset] lg:right-0 lg:translate-x-[79px]" src="'.esc_url($available_system_photo).'" alt="Laptop">';
+            echo '<img data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both" class="pointer-events-none rounded-b-[16px] max-w-[125%] sm:max-w-full absolute bottom-0 left-1/2 translate-x-[-50%] lg:left-[unset] lg:right-0 lg:translate-x-[79px]" src="'.esc_url($available_system_photo).'" alt="Laptop">';
           }
         ?>
         <div class="hidden gap-[48px] flex-col lg:flex">
@@ -184,7 +184,7 @@
               foreach ($available_system as $index => $system) {
                echo '<div class="flex gap-[32px]" data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both">
                       <div class="h-[64px] w-[64px] rounded-full bg-[#CAD8E7] flex items-center justify-center">
-                       <img src="'.esc_url($system['icon']).'" class="" alt="Laptop">
+                       <img src="'.esc_url($system['icon']).'" class="pointer-events-none" alt="Laptop">
                       </div>
                       <div class="max-w-[288px]">
                         <h6 class="text-[24px] tracking-[0.2px] text-[#191919] font-extrabold mb-[16px]">'. esc_html($system['name']) .'</h6>
@@ -204,7 +204,7 @@
             foreach ($available_system as $index => $system) {
               echo '<div class="flex gap-[24px] items-center">
                     <div class="h-[64px] w-[64px] rounded-full bg-[#CAD8E7] flex items-center justify-center">
-                      <img src="'.esc_url($system['icon']).'" class="" alt="Laptop">
+                      <img src="'.esc_url($system['icon']).'" class="pointer-events-none" alt="Laptop">
                     </div>
                     <div class="max-w-[240px]">
                       <h6 class="text-[16px] tracking-[0.2px] text-[#191919] font-extrabold mb-[8px]">'. esc_html($system['name']) .'</h6>

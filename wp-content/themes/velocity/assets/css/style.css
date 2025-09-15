@@ -306,9 +306,6 @@
   .left-\[-30px\] {
     left: -30px;
   }
-  .left-\[-499px\] {
-    left: -499px;
-  }
   .left-\[16px\] {
     left: 16px;
   }
@@ -2931,6 +2928,16 @@ html, body {
     outline: unset !important;
   }
   #page {
+    .section-hero > div:first-child {
+      @media screen and (min-width:1700px) {
+        height: 1080px;
+      }
+    }
+    .section-hero-after {
+      @media screen and (min-width:1700px) {
+        margin-top: 1400px;
+      }
+    }
     .contact-form {
       .wpcf7-spinner {
         display: none;

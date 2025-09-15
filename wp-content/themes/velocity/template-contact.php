@@ -11,7 +11,7 @@
       $contact_hero_overlay = get_field('contact_hero_overlay', $page_id);
 
       if ($contact_hero_overlay) {
-        echo '<div class="h-full bg-no-repeat bg-center bg-cover top-0 right-0 left-0 absolute" data-animate="animate-shake animate-once animate-duration-[4000ms]" style="background-image: url(' . esc_url($contact_hero_overlay) . ')"></div>';
+        echo '<div class="pointer-events-none h-full bg-no-repeat bg-center bg-cover top-0 right-0 left-0 absolute" data-animate="animate-shake animate-once animate-duration-[4000ms]" style="background-image: url(' . esc_url($contact_hero_overlay) . ')"></div>';
       }
     ?>
     <?php
@@ -20,7 +20,7 @@
       $contact_hero_photo = get_field('contact_hero_photo', $page_id);
 
       if ($contact_hero_photo) {
-        echo '<div class="w-[145%] lg:w-auto h-full bg-no-repeat bg-bottom bg-cover bottom-0 right-0 left-0 absolute" data-animate="animate-fade-up animate-once" style="background-image: url(' . esc_url($contact_hero_photo) . ')"></div>';
+        echo '<div class="pointer-events-none w-[145%] lg:w-auto h-full bg-no-repeat bg-bottom bg-cover bottom-0 right-0 left-0 absolute" data-animate="animate-fade-up animate-once" style="background-image: url(' . esc_url($contact_hero_photo) . ')"></div>';
       }
     ?>
     <div class="relative container pt-[87px]! lg:pt-[158px]! pb-[190px]! lg:pb-[225px]!"> 
@@ -55,7 +55,7 @@
             $counter_logo = get_field('counter_logo', $page_id);
 
             if ($counter_logo) {
-              echo '<div data-animate="animate-fade-up animate-once" class="absolute w-[100%] md:w-[719.9px] h-[477px] md:h-[784.23px] top-[unset] bottom-[-24%] md:top-[-300px] left-[unset] md:left-[-370px] lg:left-[-240px] bg-size-[180%] md:bg-size-[auto] bg-[56%_32%] bg-no-repeat" style="background-image: url(' . esc_url($counter_logo) . ')"></div>';
+              echo '<div data-animate="animate-fade-up animate-once" class="pointer-events-none absolute w-[100%] md:w-[719.9px] h-[477px] md:h-[784.23px] top-[unset] bottom-[-24%] md:top-[-300px] left-[unset] md:left-[-370px] lg:left-[-240px] bg-size-[180%] md:bg-size-[auto] bg-[56%_32%] bg-no-repeat" style="background-image: url(' . esc_url($counter_logo) . ')"></div>';
             }
           ?>
           <div class="w-initial md:w-[432px] float-none md:float-right flex flex-col md:flex-row flex-no-wrap md:flex-wrap gap-x-[68px] gap-y-[24px] md:gap-y-[80px]">

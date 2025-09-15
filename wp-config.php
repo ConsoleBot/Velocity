@@ -18,18 +18,43 @@
  * @package WordPress
  */
 
+ //Using environment variables for memory limits
+$wp_memory_limit = (getenv('WP_MEMORY_LIMIT') && preg_match("/^[0-9]+M$/", getenv('WP_MEMORY_LIMIT'))) ? getenv('WP_MEMORY_LIMIT') : '128M';
+$wp_max_memory_limit = (getenv('WP_MAX_MEMORY_LIMIT') && preg_match("/^[0-9]+M$/", getenv('WP_MAX_MEMORY_LIMIT'))) ? getenv('WP_MAX_MEMORY_LIMIT') : '256M';
+
+/** General WordPress memory limit for PHP scripts*/
+define('WP_MEMORY_LIMIT', $wp_memory_limit );
+
+/** WordPress memory limit for Admin panel scripts */
+define('WP_MAX_MEMORY_LIMIT', $wp_max_memory_limit );
+
+
 // ** Database settings - You can get this info from your web host ** //
+$connectstr_dbhost = getenv('DATABASE_HOST');
+$connectstr_dbname = getenv('DATABASE_NAME');
+$connectstr_dbusername = getenv('DATABASE_USERNAME');
+$connectstr_dbpassword = getenv('DATABASE_PASSWORD');
+
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'velocity_schema' );
+// define( 'DB_NAME', 'velocity_schema' );
+define('DB_NAME', $connectstr_dbname);
+// define('DB_NAME', 'velocity_marketing_site_2025');
 
 /** Database username */
-define( 'DB_USER', 'root' );
+// define( 'DB_USER', 'root' );
+define('DB_USER', $connectstr_dbusername);
+// define('DB_USER', 'cdsuwqksbb');
 
 /** Database password */
-define( 'DB_PASSWORD', '' );
+// define( 'DB_PASSWORD', '' );
+define('DB_PASSWORD',$connectstr_dbpassword);
+// define('DB_PASSWORD', 'L2IP71175DP753P4$');
 
 /** Database hostname */
-define( 'DB_HOST', '127.0.0.1:3306' );
+// define( 'DB_HOST', '127.0.0.1:3306' );
+define('DB_HOST', $connectstr_dbhost);
+// define('DB_HOST', 'velocityma-dd6f63ba1024e919299bcbd4-dbserver.mysql.database.azure.com');
+
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
@@ -37,8 +62,8 @@ define( 'DB_CHARSET', 'utf8' );
 /** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
 
-define('WP_MAIL_SMTP_HOST', '127.0.0.1');
-define('WP_MAIL_SMTP_PORT', 1025);
+// define('WP_MAIL_SMTP_HOST', '127.0.0.1');
+// define('WP_MAIL_SMTP_PORT', 1025);
 
 /**#@+
  * Authentication unique keys and salts.

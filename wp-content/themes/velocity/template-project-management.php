@@ -20,10 +20,10 @@
           $screen_only_photo = get_field('product_screen_hero_photo', $page_id);
           $laptop_full_photo = get_field('product_laptop_hero_photo', $page_id);
           if ($screen_only_photo) {
-            echo '<img src="'.esc_url($screen_only_photo).'" data-animate="animate-fade animate-once animate-fill-both" class="hero-screen-photo absolute left-0 w-full z-10" alt="Screen">';
+            echo '<img src="'.esc_url($screen_only_photo).'" data-animate="animate-fade animate-once animate-fill-both" class="pointer-events-none hero-screen-photo absolute left-0 w-full z-10" alt="Screen">';
           }
           if ($laptop_full_photo) {
-            echo '<img src="'.esc_url($laptop_full_photo).'" class="hero-laptop-photo absolute top-0 z-9 opacity-0 w-[83%]" alt="Laptop">';
+            echo '<img src="'.esc_url($laptop_full_photo).'" class="pointer-events-none hero-laptop-photo absolute top-0 z-9 opacity-0 w-[83%]" alt="Laptop">';
           }
         ?>
       </div>
@@ -32,7 +32,7 @@
       Say goodbye to spreadsheets and scattered communications to experience efficient project<br> management like never before. With Velocity Properties Project Management tool, everything you need is in one place.
     </p>
   </div>
-  <section class="overflow-hidden lg:overflow-[unset] relative min-h-unset lg:min-h-[1478px] block lg:flex mt-[694px] sm:mt-[894px] md:mt-[1034px] lg:mt-[1203px] xl:mt-[1292px] 2xl:mt-[1342px]">
+  <section class="section-hero-after overflow-hidden lg:overflow-[unset] relative min-h-unset lg:min-h-[1478px] block lg:flex mt-[694px] sm:mt-[894px] md:mt-[1034px] lg:mt-[1203px] xl:mt-[1292px] 2xl:mt-[1342px]">
     <div class="bg-[#102321] h-[930px] sm:h-[1024px] lg:h-[1478px] w-full lg:w-[63.4%] pt-[64px] lg:pt-[161px] pl-[16px] lg:pl-[120px] pr-[16px] lg:pr-[80px]">
       <h2 data-animate="animate-fade-right animate-once animate-fill-both" class="text-[32px] md:text-[56px] text-[#FEFEFE]  tracking-[0.2px] font-extrabold mb-[16px]">Key  Feature</h2>
       <p data-animate="animate-fade-up animate-once animate-fill-both" class="font-inter max-w-[690px] text-[16px] text-[#FEFEFE] leading-[157%] tracking-[0.15px] mb-[50px]">Our platform simplifies property management with an intuitive dashboard, automated leases and payments, real-time maintenance tracking, and powerful reporting tools.</p>
@@ -83,7 +83,7 @@
               $page_id = 50;
               $product_features = get_field('product_features', $page_id);
               if ($product_features) {
-                echo '<img data-animate="animate-fade-left animate-once animate-fill-both" src="'.esc_url($product_features[0]['photo']).'" class="w-[486px] bottom-[32px] lg:w-[600px] lg:bottom-unset lg:top-[-30px] xl:h-auto xl:w-auto feature-photo absolute xl:top-[-114px] right-[0]" alt="Laptop">';
+                echo '<img data-animate="animate-fade-left animate-once animate-fill-both" src="'.esc_url($product_features[0]['photo']).'" class="pointer-events-none w-[486px] bottom-[32px] lg:w-[600px] lg:bottom-unset lg:top-[-30px] xl:h-auto xl:w-auto feature-photo absolute xl:top-[-114px] right-[0]" alt="Laptop">';
               }
             ?>
           </div>

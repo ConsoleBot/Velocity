@@ -17,7 +17,7 @@
             $about_us_hero_overlay = get_field('about_us_hero_overlay', $page_id);
 
             if ($about_us_hero_overlay) {
-              echo '<div class="absolute h-full w-full" data-animate="animate-fade animate-once animate-duration-[4000ms]" style="background-image: url(' . esc_url($about_us_hero_overlay) . ')"></div>';
+              echo '<div class="pointer-events-none absolute h-full w-full" data-animate="animate-fade animate-once animate-duration-[4000ms]" style="background-image: url(' . esc_url($about_us_hero_overlay) . ')"></div>';
             }
           ?>
           <?php
@@ -26,7 +26,7 @@
             $about_us_hero_photo = get_field('about_us_hero_photo', $page_id);
 
             if ($about_us_hero_photo) {
-              echo '<div class="absolute h-full w-full" data-animate="animate-fade animate-once animate-duration-[4000ms]" style="background-image: url(' . esc_url($about_us_hero_photo) . ')"></div>';
+              echo '<div class="pointer-events-none absolute h-full w-full" data-animate="animate-fade animate-once animate-duration-[4000ms]" style="background-image: url(' . esc_url($about_us_hero_photo) . ')"></div>';
             }
           ?>
         </div>
@@ -47,7 +47,7 @@
               foreach ($members as $index => $member) {
                echo '<div class="" data-animate="animate-fade-up animate-once animate-delay-100 animate-fill-both">
                       <div class="h-[251px] lg:h-[448px] w-full relative overflow-hidden rounded-[16px] bg-[#DDE3E3] mb-[8px] lg:mb-[16px]">
-                       <div class="bg-no-repeat bg-center bg-cover abosolute w-full h-full" data-animate="animate-fade animate-once animate-duration-[4000ms]" style="background-image: url(' . esc_url($member['avatar']) . ')"></div>
+                       <div class="pointer-events-none bg-no-repeat bg-center bg-cover abosolute w-full h-full" data-animate="animate-fade animate-once animate-duration-[4000ms]" style="background-image: url(' . esc_url($member['avatar']) . ')"></div>
                       </div>
                       <h6 class="text-[16px] lg:text-[24px] text-[#233134] mb-[4px] tracking-[0.2px]">'. esc_html($member['name']) .'</h6>
                       <p class="text-[10px] lg:text-[14px] text-[#4A5C60] tracking-[0.2px]">'. esc_html($member['position']) .'</p>
@@ -75,7 +75,7 @@
       $more_about_us_photo = get_field('more_about_us_photo', $page_id);
 
       if ($more_about_us_photo) {
-        echo '<div data-animate="animate-fade-right animate-once" class="hidden lg:block absolute right-[78%] bottom-[-190px] w-[822px] h-[954px] bg-right bg-no-repeat bg-auto" style="background-image: url(' . esc_url($more_about_us_photo) . ')"></div>';
+        echo '<div data-animate="animate-fade-right animate-once" class="pointer-events-none hidden lg:block absolute right-[78%] bottom-[-190px] w-[822px] h-[954px] bg-right bg-no-repeat bg-auto" style="background-image: url(' . esc_url($more_about_us_photo) . ')"></div>';
       }
     ?>
     <?php
@@ -84,7 +84,7 @@
       $more_about_us_photo = get_field('more_about_us_photo', $page_id);
 
       if ($more_about_us_photo) {
-        echo '<div data-animate="animate-fade-right animate-once" class="transform -scale-x-100 hidden lg:block absolute left-[78%] bottom-[-190px] w-[822px] h-[954px] bg-right bg-no-repeat bg-auto" style="background-image: url(' . esc_url($more_about_us_photo) . ')"></div>';
+        echo '<div data-animate="animate-fade-right animate-once" class="pointer-events-none transform -scale-x-100 hidden lg:block absolute left-[78%] bottom-[-190px] w-[822px] h-[954px] bg-right bg-no-repeat bg-auto" style="background-image: url(' . esc_url($more_about_us_photo) . ')"></div>';
       }
     ?>
     <div class="container">

@@ -19,10 +19,10 @@
           $screen_only_photo = get_field('product_screen_hero_photo', $page_id);
           $laptop_full_photo = get_field('product_laptop_hero_photo', $page_id);
           if ($screen_only_photo) {
-            echo '<img src="'.esc_url($screen_only_photo).'" data-animate="animate-fade animate-once animate-fill-both" class="hero-screen-photo absolute left-0 w-full z-10" alt="Screen">';
+            echo '<img src="'.esc_url($screen_only_photo).'" data-animate="animate-fade animate-once animate-fill-both" class="pointer-events-none hero-screen-photo absolute left-0 w-full z-10" alt="Screen">';
           }
           if ($laptop_full_photo) {
-            echo '<img src="'.esc_url($laptop_full_photo).'" class="hero-laptop-photo absolute top-0 z-9 opacity-0 w-[83%]" alt="Laptop">';
+            echo '<img src="'.esc_url($laptop_full_photo).'" class="pointer-events-none hero-laptop-photo absolute top-0 z-9 opacity-0 w-[83%]" alt="Laptop">';
           }
         ?>
       </div>
@@ -32,7 +32,7 @@
       simplifies and accelerates every stage of the transaction process, from initial negotiation to final close.
     </p>
   </div>
-  <section class="mt-[694px] pt-[64px] lg:pt-0 min-h-[1346px] sm:mt-[894px] md:mt-[1034px] lg:mt-[1203px] xl:mt-[1292px] 2xl:mt-[1342px] bg-[#252829]">
+  <section class="section-hero-after mt-[694px] pt-[64px] lg:pt-0 min-h-[1346px] sm:mt-[894px] md:mt-[1034px] lg:mt-[1203px] xl:mt-[1292px] 2xl:mt-[1342px] bg-[#252829]">
     <div class="container">
       <div class="overflow-hidden relative lg:flex justify-end items-center h-[500px] lg:h-[629px] mb-[30px] lg:mb-[79px]">
         <?php
@@ -77,7 +77,7 @@
               $page_id = 42;
               $product_features = get_field('product_features', $page_id);
               if ($product_features) {
-                echo '<img data-animate="animate-fade-left animate-once animate-fill-both" src="'.esc_url($product_features[0]['photo']).'" class="w-[486px] bottom-[32px] lg:w-[600px] lg:bottom-unset lg:top-[-30px] xl:h-auto xl:w-auto feature-photo absolute xl:top-[-114px] right-[0]" alt="Laptop">';
+                echo '<img data-animate="animate-fade-left animate-once animate-fill-both" src="'.esc_url($product_features[0]['photo']).'" class="pointer-events-none w-[486px] bottom-[32px] lg:w-[600px] lg:bottom-unset lg:top-[-30px] xl:h-auto xl:w-auto feature-photo absolute xl:top-[-114px] right-[0]" alt="Laptop">';
               }
             ?>
           </div>

@@ -20,10 +20,10 @@
           $screen_only_photo = get_field('product_screen_hero_photo', $page_id);
           $laptop_full_photo = get_field('product_laptop_hero_photo', $page_id);
           if ($screen_only_photo) {
-            echo '<img src="'.esc_url($screen_only_photo).'" data-animate="animate-fade animate-once animate-fill-both" class="hero-screen-photo absolute left-0 w-full z-10" alt="Screen">';
+            echo '<img src="'.esc_url($screen_only_photo).'" data-animate="animate-fade animate-once animate-fill-both" class="pointer-events-none hero-screen-photo absolute left-0 w-full z-10" alt="Screen">';
           }
           if ($laptop_full_photo) {
-            echo '<img src="'.esc_url($laptop_full_photo).'" class="hero-laptop-photo absolute top-0 z-9 opacity-0 w-[83%]" alt="Laptop">';
+            echo '<img src="'.esc_url($laptop_full_photo).'" class="pointer-events-none hero-laptop-photo absolute top-0 z-9 opacity-0 w-[83%]" alt="Laptop">';
           }
         ?>
       </div>
@@ -32,7 +32,7 @@
       Streamline, automate, and manage complex workflows within your organization. Transform the way you<br> work with Velocity Properties Workflow tool and experience a new level of productivity.
     </p>
   </div>
-  <section class="min-h-unset bg-[#252829] lg:min-h-[1024px] mt-[694px] sm:mt-[894px] md:mt-[1034px] lg:mt-[1203px] xl:mt-[1292px] 2xl:mt-[1342px]">
+  <section class="section-hero-after min-h-unset bg-[#252829] lg:min-h-[1024px] mt-[694px] sm:mt-[894px] md:mt-[1034px] lg:mt-[1203px] xl:mt-[1292px] 2xl:mt-[1342px]">
     <div class="container">
       <div class="mt-[64px] md:mt-[80px] text-center flex flex-col items-center">
         <h2 data-animate="animate-fade-right animate-once animate-fill-both" class="max-w-[996px] text-[32px] md:text-[56px] text-[#FEFEFE]  tracking-[0.2px] font-extrabold mb-[16px]">Key  Feature</h2>
@@ -94,7 +94,7 @@
               $page_id = 54;
               $product_features = get_field('product_features', $page_id);
               if ($product_features) {
-                echo '<img data-animate="animate-fade-left animate-once animate-fill-both" src="'.esc_url($product_features[0]['photo']).'" class="w-[486px] bottom-[32px] lg:w-[600px] lg:bottom-unset lg:top-[-30px] xl:h-auto xl:w-auto feature-photo absolute xl:top-[-114px] right-[0]" alt="Laptop">';
+                echo '<img data-animate="animate-fade-left animate-once animate-fill-both" src="'.esc_url($product_features[0]['photo']).'" class="pointer-events-none w-[486px] bottom-[32px] lg:w-[600px] lg:bottom-unset lg:top-[-30px] xl:h-auto xl:w-auto feature-photo absolute xl:top-[-114px] right-[0]" alt="Laptop">';
               }
             ?>
           </div>

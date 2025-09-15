@@ -32,8 +32,8 @@
             <a href="" data-animate="animate-fade-right animate-once" class="text-[#191919] bg-[#FEFEFE] h-[46px] flex items-center px-[32px] rounded-[100px] no-underline font-semibold tracking-[0.25px]">Login</a>
           </div>
           <button id="mobileMenuBtn" data-animate="animate-fade-right" class="block md:hidden top-4 right-4 z-50 flex flex-col items-center justify-center space-y-[6px] w-10 h-10 focus:outline-none">
-            <span class="block h-[2px] w-6 bg-black transition-transform duration-300 ease-in-out"></span>
-            <span class="block h-[2px] w-6 bg-black transition-transform duration-300 ease-in-out"></span>
+            <span class="block h-[2px] w-6 bg-white transition-transform duration-300 ease-in-out"></span>
+            <span class="block h-[2px] w-6 bg-white transition-transform duration-300 ease-in-out"></span>
           </button>
           <?php
             $img_url = get_template_directory_uri() . '/assets/images/mobile-menu-background.png';
